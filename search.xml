@@ -359,6 +359,48 @@ net<span class="token punctuation">.</span>ipv6<span class="token punctuation">.
       </tags>
   </entry>
   <entry>
+    <title>MarkDownPad2常见问题解决</title>
+    <url>/2023/09/20/MarkDownPad2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h1><h2 id="This-view-has-crashed"><a href="#This-view-has-crashed" class="headerlink" title="This view has crashed"></a>This view has crashed</h2><p>提示</p>
+<blockquote>
+<p>awesomium<br>web-browser framework<br>This view has crashed</p>
+</blockquote>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>Win10平台需要安装awesomium_v1.6.6_sdk_win，否则HTML无法渲染</p>
+<p>官网的解决方法：下载一个<a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe">awesomium</a>，有110MB，下载后，选择完全版本自选路径安装。</p>
+<h2 id="处理Github风格Markdown时出错"><a href="#处理Github风格Markdown时出错" class="headerlink" title="处理Github风格Markdown时出错"></a>处理Github风格Markdown时出错</h2><p>提示</p>
+<blockquote>
+<p>处理Github风格Markdown时出错.<br>请求被中止:魏晨创建SSL&#x2F;TLS安全通道。<br>如果问题仍存在，请反馈该错误.</p>
+</blockquote>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
+<li><p>首先要确认是否安装了Net Framework 4.5以上，若没有，<a href="https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472?utm_source=getdotnet&utm_medium=referral">点此下载</a></p>
+</li>
+<li><p>桌面新建txt, 重命名为MarkDownPad2.reg，使其变成注册表，然后写入以下内容，双击运行即可</p>
+</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Windows</span> <span class="token class-name">Registry</span> <span class="token class-name">Editor</span> <span class="token class-name">Version</span> <span class="token number">5.00</span>
+
+<span class="token punctuation">[</span><span class="token constant">HKEY_LOCAL_MACHINE</span>\<span class="token constant">SOFTWARE</span>\<span class="token class-name">Microsoft</span>\<span class="token punctuation">.</span>NETFramework\v4<span class="token punctuation">.</span><span class="token number">0.30319</span><span class="token punctuation">]</span>
+<span class="token string">"SchUseStrongCrypto"</span><span class="token operator">=</span>dword<span class="token operator">:</span><span class="token number">00000001</span>
+
+<span class="token punctuation">[</span><span class="token constant">HKEY_LOCAL_MACHINE</span>\<span class="token constant">SOFTWARE</span>\<span class="token class-name">Wow6432Node</span>\<span class="token class-name">Microsoft</span>\<span class="token punctuation">.</span>NETFramework\v4<span class="token punctuation">.</span><span class="token number">0.30319</span><span class="token punctuation">]</span>
+<span class="token string">"SchUseStrongCrypto"</span><span class="token operator">=</span>dword<span class="token operator">:</span><span class="token number">00000001</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<ol start="3">
+<li>重启MarkdownPad 2</li>
+</ol>
+<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#83;&#111;&#97;&#x72;&#51;&#54;&#48;&#x40;&#x6c;&#x69;&#118;&#101;&#46;&#99;&#111;&#x6d;">&#83;&#111;&#97;&#x72;&#51;&#54;&#48;&#x40;&#x6c;&#x69;&#118;&#101;&#46;&#99;&#111;&#x6d;</a></p>
+<p>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&#x2F;sQytXJUQl&#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&#x3D;&#x3D;</p>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>MarkDownPad2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OVH KS-LE1 14.9欧元 法国杜甫测评</title>
     <url>/2023/09/18/OVH%20KS-LE1%2014.9%E6%AC%A7%E5%85%83%20%E6%B3%95%E5%9B%BD%E6%9D%9C%E7%94%AB%E6%B5%8B%E8%AF%84/</url>
     <content><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>OVH，全名OVH Groupe SAS，法国云端运算公司，提供有VPS、专有服务器及其他Web服务。OVH拥有一个全球面积最大的数据中心。[5]它是欧洲最大的互联网托管服务提供商[6] [7]，也是全球第三大基于物理服务器的托管服务提供商。[8]该公司由Klaba家族于1999年成立[1]，总部位于法国鲁贝。[9]OVH是按法国法律成立的简化股份制公司。</p>
