@@ -390,7 +390,7 @@ net<span class="token punctuation">.</span>ipv6<span class="token punctuation">.
 <ol start="3">
 <li>重启MarkdownPad 2</li>
 </ol>
-<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#83;&#x6f;&#x61;&#x72;&#x33;&#x36;&#48;&#64;&#x6c;&#x69;&#x76;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#83;&#x6f;&#x61;&#x72;&#x33;&#x36;&#48;&#64;&#x6c;&#x69;&#x76;&#101;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#83;&#x6f;&#97;&#x72;&#x33;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#83;&#x6f;&#97;&#x72;&#x33;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&#x2F;sQytXJUQl&#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&#x3D;&#x3D;</p>
 ]]></content>
       <categories>
@@ -1708,8 +1708,8 @@ abuse得分<span class="token punctuation">(</span>越低越好<span class="toke
       </tags>
   </entry>
   <entry>
-    <title>OVH KS-LE1 14.9欧元 法国杜甫测评</title>
-    <url>/2023/09/18/%E7%8B%97%E4%BA%91%EF%BC%88dogyun%EF%BC%89%E9%87%8D%E5%BA%86CQ-A%E7%8B%AC%E7%AB%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%8B%E8%AF%84/</url>
+    <title>狗云（dogyun）重庆CQ-A独立服务器测评</title>
+    <url>/2023/09/24/%E7%8B%97%E4%BA%91%EF%BC%88dogyun%EF%BC%89%E9%87%8D%E5%BA%86CQ-A%E7%8B%AC%E7%AB%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%8B%E8%AF%84/</url>
     <content><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>2019年成立的国人IDC商家，产品购买需要实名。</p>
 <h1 id="测评目标"><a href="#测评目标" class="headerlink" title="测评目标"></a>测评目标</h1><p>CQ.A<br>基础费用：￥400 &#x2F;月度<br>CPU：	1 x Intel(R) E5-2630 v4 @ 10C20T 2.2 ~ 3.1 GHz<br>内存：	64G DDR4 ECC<br>存储：	800G SSD<br>联通	入 50 Mbps 出 35 Mbps</p>
 <h1 id="YABS"><a href="#YABS" class="headerlink" title="YABS"></a>YABS</h1><h2 id="YABS-1"><a href="#YABS-1" class="headerlink" title="YABS"></a>YABS</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">root<span class="token annotation punctuation">@DS1653</span><span class="token operator">:</span><span class="token operator">~</span># curl <span class="token operator">-</span>sL yabs<span class="token punctuation">.</span>sh <span class="token operator">|</span> bash <span class="token operator">-</span>s <span class="token operator">--</span>
@@ -1894,7 +1894,7 @@ abuse得分<span class="token punctuation">(</span>越低越好<span class="toke
         <category>测评</category>
       </categories>
       <tags>
-        <tag>OVH</tag>
+        <tag>dogyun</tag>
       </tags>
   </entry>
 </search>
