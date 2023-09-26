@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://www.seekvps.com</id>
+    <title>VPS探索者 • Posts by &#34;软考&#34; category</title>
+    <link href="http://www.seekvps.com" />
+    <updated>2023-09-26T14:30:44.000Z</updated>
+    <category term="akile.io" />
+    <category term="Debian" />
+    <category term="MarkDownPad2" />
+    <category term="OVH" />
+    <category term="bero-host.de" />
+    <category term="prohosting24.de" />
+    <category term="skrime.eu" />
+    <category term="搬瓦工" />
+    <category term="dogyun" />
+    <category term="软考" />
+    <entry>
+        <id>http://www.seekvps.com/2023/09/26/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95%E6%97%A0%E8%84%91%E6%9A%B4%E5%8A%9B%E8%A7%A3%E9%A2%98%E6%B3%95%EF%BC%8C%E5%82%BB%E7%93%9C%E4%B9%9F%E8%83%BD%E4%BD%9C%E5%AF%B9/</id>
+        <title>银行家算法无脑暴力解题法，傻瓜也能作对</title>
+        <link rel="alternate" href="http://www.seekvps.com/2023/09/26/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95%E6%97%A0%E8%84%91%E6%9A%B4%E5%8A%9B%E8%A7%A3%E9%A2%98%E6%B3%95%EF%BC%8C%E5%82%BB%E7%93%9C%E4%B9%9F%E8%83%BD%E4%BD%9C%E5%AF%B9/"/>
+        <content type="html">&lt;h1 id=&#34;原理讲解&#34;&gt;&lt;a href=&#34;#原理讲解&#34; class=&#34;headerlink&#34; title=&#34;原理讲解&#34;&gt;&lt;/a&gt;原理讲解&lt;/h1&gt;&lt;p&gt;非剥夺资源的竞争和进程的不恰当推进顺序会导致死锁，而银行家算法就是为了解决死锁问题——避免死锁。&lt;/p&gt;
+&lt;p&gt;银行家算法：当一个进程申请使用资源的时候，银行家算法通过先 试探 分配给该进程资源，然后通过安全性算法判断分配后的系统是否处于安全状态，若不安全则试探分配作废，让该进程继续等待。&lt;/p&gt;
+&lt;p&gt;那么此时会有一个问题，如何判断系统是否处于安全状态？算法流程将用下面一张图来表示。&lt;/p&gt;
+&lt;p&gt;首先是银行家算法中的进程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;包含进程Pi的需求资源数量（也是最大需求资源数量，MAX）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;已分配给该进程的资源A（Allocation）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;还需要的资源数量N（Need&amp;#x3D;M-A）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Available为空闲资源数量，即资源池（注意：资源池的剩余资源数量+已分配给所有进程的资源数量&amp;#x3D;系统中的资源总量）&lt;/p&gt;
+&lt;p&gt;假设资源P1申请资源，银行家算法先试探的分配给它（当然先要看看当前资源池中的资源数量够不够），若申请的资源数量小于等于Available，然后接着判断分配给P1后剩余的资源，能不能使进程队列的某个进程执行完毕，若没有进程可执行完毕，则系统处于不安全状态（即此时没有一个进程能够完成并释放资源，随时间推移，系统终将处于死锁状态）。&lt;/p&gt;
+&lt;h2 id=&#34;若有进程可执行完毕，则假设回收已分配给它的资源（剩余资源数量增加），把这个进程标记为可完成，并继续判断队列中的其它进程，若所有进程都可执行完毕，则系统处于安全状态，并根据可完成进程的分配顺序生成安全序列（如-P0，P3，P2，P1-表示将申请后的剩余资源Work先分配给P0–-回收（Work-已分配给P0的A0-Work）–-分配给P3–-回收（Work-A3-Work）–-分配给P2–-······满足所有进程），如此就可避免系统存在潜在死锁的风险。&#34;&gt;&lt;a href=&#34;#若有进程可执行完毕，则假设回收已分配给它的资源（剩余资源数量增加），把这个进程标记为可完成，并继续判断队列中的其它进程，若所有进程都可执行完毕，则系统处于安全状态，并根据可完成进程的分配顺序生成安全序列（如-P0，P3，P2，P1-表示将申请后的剩余资源Work先分配给P0–-回收（Work-已分配给P0的A0-Work）–-分配给P3–-回收（Work-A3-Work）–-分配给P2–-······满足所有进程），如此就可避免系统存在潜在死锁的风险。&#34; class=&#34;headerlink&#34; title=&#34;若有进程可执行完毕，则假设回收已分配给它的资源（剩余资源数量增加），把这个进程标记为可完成，并继续判断队列中的其它进程，若所有进程都可执行完毕，则系统处于安全状态，并根据可完成进程的分配顺序生成安全序列（如{P0，P3，P2，P1}表示将申请后的剩余资源Work先分配给P0–&amp;gt;回收（Work+已分配给P0的A0&amp;#x3D;Work）–&amp;gt;分配给P3–&amp;gt;回收（Work+A3&amp;#x3D;Work）–&amp;gt;分配给P2–&amp;gt;······满足所有进程），如此就可避免系统存在潜在死锁的风险。&#34;&gt;&lt;/a&gt;若有进程可执行完毕，则假设回收已分配给它的资源（剩余资源数量增加），把这个进程标记为可完成，并继续判断队列中的其它进程，若所有进程都可执行完毕，则系统处于安全状态，并根据可完成进程的分配顺序生成安全序列（如{P0，P3，P2，P1}表示将申请后的剩余资源Work先分配给P0–&amp;gt;回收（Work+已分配给P0的A0&amp;#x3D;Work）–&amp;gt;分配给P3–&amp;gt;回收（Work+A3&amp;#x3D;Work）–&amp;gt;分配给P2–&amp;gt;······满足所有进程），如此就可避免系统存在潜在死锁的风险。&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://hub.91imgs.com/i/2023/09/26/6512e88c070d1.webp&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;暴力解题&#34;&gt;&lt;a href=&#34;#暴力解题&#34; class=&#34;headerlink&#34; title=&#34;暴力解题&#34;&gt;&lt;/a&gt;暴力解题&lt;/h1&gt;&lt;h2 id=&#34;实战题目&#34;&gt;&lt;a href=&#34;#实战题目&#34; class=&#34;headerlink&#34; title=&#34;实战题目&#34;&gt;&lt;/a&gt;实战题目&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://hub.91imgs.com/i/2023/09/26/6512e63473d5e.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解题方法&#34;&gt;&lt;a href=&#34;#解题方法&#34; class=&#34;headerlink&#34; title=&#34;解题方法&#34;&gt;&lt;/a&gt;解题方法&lt;/h2&gt;&lt;p&gt;先不管那些定义，首先算出来以下矩阵：&lt;/p&gt;
+&lt;p&gt;9-1-2-2-1-1 &amp;#x3D; 2&lt;/p&gt;
+&lt;p&gt;8-2-1-1-2-1 &amp;#x3D; 1&lt;/p&gt;
+&lt;p&gt;5-1-1-0-0-3 &amp;#x3D; 0&lt;/p&gt;
+&lt;p&gt;即矩阵|210|&lt;/p&gt;
+&lt;p&gt; 接着会有如下矩阵运算&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;\left[&lt;br&gt;\begin{matrix}&lt;br&gt;6 &amp;amp; 5 &amp;amp; 2  \&lt;br&gt;2 &amp;amp; 2 &amp;amp; 1  \&lt;br&gt;8 &amp;amp; 1 &amp;amp; 1  \&lt;br&gt;1 &amp;amp; 2 &amp;amp; 1  \&lt;br&gt;3 &amp;amp; 4 &amp;amp; 4&lt;br&gt;\end{matrix}&lt;br&gt;\right]&lt;br&gt;\tag{2}&lt;br&gt;$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$&lt;br&gt;\left[&lt;br&gt;\begin{matrix}&lt;br&gt;1 &amp;amp; 2 &amp;amp; 1  \&lt;br&gt;2 &amp;amp; 1 &amp;amp; 1  \&lt;br&gt;2 &amp;amp; 1 &amp;amp; 0  \&lt;br&gt;1 &amp;amp; 2 &amp;amp; 0  \&lt;br&gt;1 &amp;amp; 1 &amp;amp; 3&lt;br&gt;\end{matrix}&lt;br&gt;\right]&lt;br&gt;\tag{2}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;&amp;#x3D;&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;\left[&lt;br&gt;\begin{matrix}&lt;br&gt;5 &amp;amp; 3 &amp;amp; 1  \&lt;br&gt;0 &amp;amp; 1 &amp;amp; 0  \&lt;br&gt;6 &amp;amp; 0 &amp;amp; 1  \&lt;br&gt;0 &amp;amp; 0 &amp;amp; 1  \&lt;br&gt;2 &amp;amp; 3 &amp;amp; 1&lt;br&gt;\end{matrix}&lt;br&gt;\right]&lt;br&gt;\tag{2}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;所以从B,C中选择，选择P2释放已分配资源于是 |210| + |211| &amp;#x3D; |321|&lt;br&gt;所以排除了C&lt;/p&gt;
+</content>
+        <category term="软考" />
+        <updated>2023-09-26T14:30:44.000Z</updated>
+    </entry>
+</feed>
