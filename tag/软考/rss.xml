@@ -45,13 +45,11 @@
 &lt;p&gt;5-1-1-0-0-3 &amp;#x3D; 0&lt;/p&gt;
 &lt;p&gt;即矩阵|210|&lt;/p&gt;
 &lt;p&gt; 接着会有如下矩阵运算&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\left[&lt;br&gt;\begin{matrix}&lt;br&gt;6 &amp;amp; 5 &amp;amp; 2  \&lt;br&gt;2 &amp;amp; 2 &amp;amp; 1  \&lt;br&gt;8 &amp;amp; 1 &amp;amp; 1  \&lt;br&gt;1 &amp;amp; 2 &amp;amp; 1  \&lt;br&gt;3 &amp;amp; 4 &amp;amp; 4&lt;br&gt;\end{matrix}&lt;br&gt;\right]&lt;br&gt;\tag{2}&lt;br&gt;$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$&lt;br&gt;\left[&lt;br&gt;\begin{matrix}&lt;br&gt;1 &amp;amp; 2 &amp;amp; 1  \&lt;br&gt;2 &amp;amp; 1 &amp;amp; 1  \&lt;br&gt;2 &amp;amp; 1 &amp;amp; 0  \&lt;br&gt;1 &amp;amp; 2 &amp;amp; 0  \&lt;br&gt;1 &amp;amp; 1 &amp;amp; 3&lt;br&gt;\end{matrix}&lt;br&gt;\right]&lt;br&gt;\tag{2}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;6  5  2&lt;br&gt;2  2  1&lt;br&gt;8  1  1&lt;br&gt;1  2  1&lt;br&gt;3  4  4&lt;/p&gt;
+&lt;p&gt;减去&lt;/p&gt;
+&lt;p&gt;1  2  1&lt;br&gt;2  1  1&lt;br&gt;2  1  0&lt;br&gt;1  2  0&lt;br&gt;1  1  3&lt;/p&gt;
 &lt;p&gt;&amp;#x3D;&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\left[&lt;br&gt;\begin{matrix}&lt;br&gt;5 &amp;amp; 3 &amp;amp; 1  \&lt;br&gt;0 &amp;amp; 1 &amp;amp; 0  \&lt;br&gt;6 &amp;amp; 0 &amp;amp; 1  \&lt;br&gt;0 &amp;amp; 0 &amp;amp; 1  \&lt;br&gt;2 &amp;amp; 3 &amp;amp; 1&lt;br&gt;\end{matrix}&lt;br&gt;\right]&lt;br&gt;\tag{2}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;5  3  1&lt;br&gt;0  1  0&lt;br&gt;6  0  1&lt;br&gt;0  0  1&lt;br&gt;2  3  1&lt;/p&gt;
 &lt;p&gt;所以从B,C中选择，选择P2释放已分配资源于是 |210| + |211| &amp;#x3D; |321|&lt;br&gt;所以排除了C&lt;/p&gt;
  ]]></description>
         </item>
