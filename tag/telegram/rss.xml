@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>VPS探索者 • Posts by &#34;telegram&#34; tag</title>
+        <link>http://www.seekvps.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 27 Oct 2023 09:17:44 +0800</pubDate>
+        <lastBuildDate>Fri, 27 Oct 2023 09:17:44 +0800</lastBuildDate>
+        <category>akile.io</category>
+        <category>Debian</category>
+        <category>MarkDownPad2</category>
+        <category>OVH</category>
+        <category>Telegram</category>
+        <category>bero-host.de</category>
+        <category>iptables</category>
+        <category>layer.ae</category>
+        <category>prohosting24.de</category>
+        <category>skrime.eu</category>
+        <category>suble.io</category>
+        <category>搬瓦工</category>
+        <category>dogyun</category>
+        <category>测评</category>
+        <category>软考</category>
+        <item>
+            <guid isPermalink="true">http://www.seekvps.com/2023/10/27/TG%20%E8%8E%B7%E5%8F%96Channel%20ID/</guid>
+            <title>Telegram获取Channel ID</title>
+            <link>http://www.seekvps.com/2023/10/27/TG%20%E8%8E%B7%E5%8F%96Channel%20ID/</link>
+            <category>Telegram</category>
+            <pubDate>Fri, 27 Oct 2023 09:17:44 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;Web版查看，可用于私密频道&#34;&gt;&lt;a href=&#34;#Web版查看，可用于私密频道&#34; class=&#34;headerlink&#34; title=&#34;Web版查看，可用于私密频道&#34;&gt;&lt;/a&gt;Web版查看，可用于私密频道&lt;/h1&gt;&lt;p&gt;解决方案如下&lt;/p&gt;
+&lt;p&gt;1.在网页版Telegram的帐户下登录： &lt;a href=&#34;https://web.telegram.org/&#34;&gt;https://web.telegram.org&lt;/a&gt;&lt;br&gt;2.点击你的私人的频道。这是浏览器的网址会发生变化，变成这样 &lt;a href=&#34;https://web.telegram.org/#/im?p=c1055587116_11052224402541910257&#34;&gt;https://web.telegram.org/#/im?p=c1055587116_11052224402541910257&lt;/a&gt;&lt;br&gt;3.从浏览器地址栏获取“1055587116”，并添加“-100”作为前缀。&lt;br&gt;所以，你的频道 ID 是 “-1001055587116”。&lt;/p&gt;
+&lt;p&gt;2023 年 3 月 17 日 18:22:13 新加入新的方法 简单易用&lt;/p&gt;
+&lt;p&gt;除了通过 Telegram 应用程序和 Telegram Bot API 获取频道 ID 外，您还可以通过以下方法之一获取频道 ID：&lt;/p&gt;
+&lt;p&gt;在 Web 版 Telegram 中打开您的私人频道，然后在浏览器的地址栏中查找 URL。URL 的一部分类似于 &lt;a href=&#34;https://web.telegram.org/z/#-1234567890%EF%BC%8C%E5%85%B6%E4%B8%AD&#34;&gt;https://web.telegram.org/z/#-1234567890，其中&lt;/a&gt; -1234567890 是您的频道 ID。&lt;/p&gt;
+&lt;p&gt;如果您使用的是 Telegram 客户端的桌面版或移动版，请在频道中发送一条消息，然后将光标悬停在该消息上，直到弹出一个快捷菜单。在该菜单中，选择“复制链接”，然后在文本编辑器中粘贴该链接。该链接类似于 &lt;a href=&#34;https://t.me/your_channel_name/1234%EF%BC%8C%E5%85%B6%E4%B8%AD&#34;&gt;https://t.me/your_channel_name/1234，其中&lt;/a&gt; 1234 是您的频道 ID。&lt;br&gt;请注意，无论您使用哪种方法获取频道 ID，它都是负数。如果您需要将频道 ID 用于 Telegram Bot API 的请求中，您需要在频道 ID 前加上一个减号（即负号），例如 -1234567890。&lt;/p&gt;
+&lt;h1 id=&#34;直接使用-Channel-name，仅限公共频道&#34;&gt;&lt;a href=&#34;#直接使用-Channel-name，仅限公共频道&#34; class=&#34;headerlink&#34; title=&#34;直接使用 Channel name，仅限公共频道&#34;&gt;&lt;/a&gt;直接使用 Channel name，仅限公共频道&lt;/h1&gt;&lt;p&gt;假设该 public channel的邀请链接为: t.me&amp;#x2F;public_chh&lt;br&gt;@public_chh即为该 public channel 的 name&lt;br&gt;调用 sendMessage 之类的方法时, 将 @public_chh 作为 chat_id&amp;#x2F;uid 传入即可&lt;/p&gt;
+&lt;h1 id=&#34;调用TG-API&#34;&gt;&lt;a href=&#34;#调用TG-API&#34; class=&#34;headerlink&#34; title=&#34;调用TG API&#34;&gt;&lt;/a&gt;调用TG API&lt;/h1&gt;&lt;p&gt;调用 TG API&lt;br&gt;新建机器人, 获取 token&lt;br&gt;邀请机器人进入对应 Channel&lt;br&gt;调用&lt;a href=&#34;https://api.telegram.org/bot[BOT_TOKEN]/sendMessage?chat_id=%5Bchannel_name%5D&amp;text=%5BMESSAGE_TEXT%5D%E5%8D%B3%E5%8F%AF,%E5%85%B7%E4%BD%93%E5%86%85%E5%AE%B9%E9%9C%80%E8%87%AA%E8%A1%8C%E6%9B%BF%E6%8D%A2&#34;&gt;https://api.telegram.org/bot[BOT_TOKEN]/sendMessage?chat_id=[channel_name]&amp;amp;text=[MESSAGE_TEXT]即可,具体内容需自行替换&lt;/a&gt;&lt;br&gt;如: bot_token 为 123:AAAA, channel_name 为public_chh,MESSAGE_TEXT为 test 实际应该请求: &lt;a href=&#34;https://api.telegram.org/bot123:AAAA/sendMessage?chat_id=@public_chh&amp;text=test&#34;&gt;https://api.telegram.org/bot123:AAAA/sendMessage?chat_id=@public_chh&amp;amp;text=test&lt;/a&gt;&lt;br&gt;正常的话, 取返回值的 result.chat.id 或者 result.sender_chat.id 即可, 都是Channel ID的值&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

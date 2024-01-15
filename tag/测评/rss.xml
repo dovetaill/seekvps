@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>VPS探索者 • Posts by &#34;测评&#34; tag</title>
+        <link>http://www.seekvps.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 15 Jan 2024 09:07:14 +0800</pubDate>
+        <lastBuildDate>Mon, 15 Jan 2024 09:07:14 +0800</lastBuildDate>
+        <category>akile.io</category>
+        <category>Debian</category>
+        <category>MarkDownPad2</category>
+        <category>OVH</category>
+        <category>Telegram</category>
+        <category>bero-host.de</category>
+        <category>iptables</category>
+        <category>layer.ae</category>
+        <category>prohosting24.de</category>
+        <category>skrime.eu</category>
+        <category>suble.io</category>
+        <category>搬瓦工</category>
+        <category>dogyun</category>
+        <category>测评</category>
+        <category>软考</category>
+        <item>
+            <guid isPermalink="true">http://www.seekvps.com/2024/01/15/%E8%9E%8D%E5%90%88%E6%80%AA%E7%9A%84%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/</guid>
+            <title>融合怪一键测试脚本修改了哪些系统参数</title>
+            <link>http://www.seekvps.com/2024/01/15/%E8%9E%8D%E5%90%88%E6%80%AA%E7%9A%84%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/</link>
+            <category>测评</category>
+            <pubDate>Mon, 15 Jan 2024 09:07:14 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;net.ipv6.conf.all.forwarding &amp;#x3D; 1&lt;br&gt;net.ipv4.conf.default.arp_announce &amp;#x3D; 2&lt;br&gt;net.ipv6.conf.default.forwarding &amp;#x3D; 1&lt;br&gt;net.ipv4.tcp_synack_retries &amp;#x3D; 3&lt;br&gt;net.ipv4.ip_forward &amp;#x3D; 1&lt;br&gt;net.ipv4.tcp_fin_timeout &amp;#x3D; 10&lt;br&gt;net.ipv4.conf.all.rp_filter &amp;#x3D; 0&lt;br&gt;fs.file-max &amp;#x3D; 1024000&lt;br&gt;net.ipv4.tcp_max_syn_backlog &amp;#x3D; 16384&lt;br&gt;net.ipv4.tcp_keepalive_time &amp;#x3D; 10&lt;br&gt;net.ipv4.ip_local_port_range &amp;#x3D; 1024 65535&lt;br&gt;net.ipv4.tcp_window_scaling &amp;#x3D; 1&lt;br&gt;net.core.wmem_max &amp;#x3D; 134217728&lt;br&gt;net.ipv4.conf.default.rp_filter &amp;#x3D; 0&lt;br&gt;net.core.rmem_max &amp;#x3D; 134217728&lt;br&gt;net.ipv4.tcp_mtu_probing &amp;#x3D; 1&lt;br&gt;net.core.netdev_max_backlog &amp;#x3D; 250000&lt;br&gt;net.core.somaxconn &amp;#x3D; 1024000&lt;br&gt;net.ipv4.tcp_fack &amp;#x3D; 1&lt;br&gt;net.ipv4.tcp_syncookies &amp;#x3D; 1&lt;br&gt;net.ipv4.tcp_timestamps &amp;#x3D; 0&lt;br&gt;net.ipv4.conf.lo.arp_announce &amp;#x3D; 2&lt;br&gt;net.ipv4.tcp_rmem &amp;#x3D; 4096 87380 67108864&lt;br&gt;net.ipv4.tcp_low_latency &amp;#x3D; 1&lt;br&gt;net.ipv4.neigh.default.gc_stale_time &amp;#x3D; 120&lt;br&gt;net.ipv4.tcp_syn_retries &amp;#x3D; 3&lt;br&gt;net.ipv4.tcp_sack &amp;#x3D; 1&lt;br&gt;net.ipv4.conf.all.arp_announce &amp;#x3D; 2&lt;br&gt;net.ipv4.tcp_max_tw_buckets &amp;#x3D; 8192&lt;br&gt;net.ipv4.tcp_fastopen &amp;#x3D; 3&lt;br&gt;net.ipv4.tcp_wmem &amp;#x3D; 4096 65536 67108864&lt;br&gt;net.ipv4.tcp_tw_reuse &amp;#x3D; 1&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

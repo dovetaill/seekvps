@@ -5,6 +5,16 @@
     "home_page_url": "http://www.seekvps.com",
     "items": [
         {
+            "id": "http://www.seekvps.com/2024/01/15/pip%E6%8F%90%E7%A4%BAexternally-managed-environment%E6%8A%A5%E9%94%99/",
+            "url": "http://www.seekvps.com/2024/01/15/pip%E6%8F%90%E7%A4%BAexternally-managed-environment%E6%8A%A5%E9%94%99/",
+            "title": "pip提示externally-managed-environment报错",
+            "date_published": "2024-01-15T01:07:14.000Z",
+            "content_html": "<h1 id=\"pip提示externally-managed-environment报错\"><a href=\"#pip提示externally-managed-environment报错\" class=\"headerlink\" title=\"pip提示externally-managed-environment报错\"></a>pip提示externally-managed-environment报错</h1><pre class=\"line-numbers language-none\"><code class=\"language-none\">error: externally-managed-environment\n\n× This environment is externally managed\n╰─&gt; To install Python packages system-wide, try apt install\n    python3-xyz, where xyz is the package you are trying to\n    install.\n    \n    If you wish to install a non-Debian-packaged Python package,\n    create a virtual environment using python3 -m venv path&#x2F;to&#x2F;venv.\n    Then use path&#x2F;to&#x2F;venv&#x2F;bin&#x2F;python and path&#x2F;to&#x2F;venv&#x2F;bin&#x2F;pip. Make\n    sure you have python3-full installed.\n    \n    If you wish to install a non-Debian packaged Python application,\n    it may be easiest to use pipx install xyz, which will manage a\n    virtual environment for you. Make sure you have pipx installed.\n    \n    See &#x2F;usr&#x2F;share&#x2F;doc&#x2F;python3.11&#x2F;README.venv for more information.<span aria-hidden=\"true\" class=\"line-numbers-rows\"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>\n\n<h1 id=\"解决\"><a href=\"#解决\" class=\"headerlink\" title=\"解决\"></a>解决</h1><ol>\n<li>pip添加参数 –break-system-packages</li>\n</ol>\n<p>或者在下列文件添加以下语句 ~&#x2F;.config&#x2F;pip&#x2F;pip.conf:</p>\n<p>[global]<br>break-system-packages &#x3D; true</p>\n<ol start=\"2\">\n<li></li>\n</ol>\n<p>直接删除限制文件</p>\n<p>sudo rm &#x2F;usr&#x2F;lib&#x2F;python3.11&#x2F;EXTERNALLY-MANAGED</p>\n",
+            "tags": [
+                "Debian"
+            ]
+        },
+        {
             "id": "http://www.seekvps.com/2023/09/19/Debian-%E5%8F%8C%E6%A0%88%E7%BD%91%E7%BB%9C%E6%97%B6%E5%BC%80%E5%90%AF-IPv4-IPv6-%E4%BC%98%E5%85%88/",
             "url": "http://www.seekvps.com/2023/09/19/Debian-%E5%8F%8C%E6%A0%88%E7%BD%91%E7%BB%9C%E6%97%B6%E5%BC%80%E5%90%AF-IPv4-IPv6-%E4%BC%98%E5%85%88/",
             "title": "Debian 双栈网络时开启 IPv4/IPv6 优先",

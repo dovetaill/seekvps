@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>VPS探索者 • Posts by &#34;suble.io&#34; tag</title>
+        <link>http://www.seekvps.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 15 Jan 2024 09:07:14 +0800</pubDate>
+        <lastBuildDate>Mon, 15 Jan 2024 09:07:14 +0800</lastBuildDate>
+        <category>akile.io</category>
+        <category>Debian</category>
+        <category>MarkDownPad2</category>
+        <category>OVH</category>
+        <category>Telegram</category>
+        <category>bero-host.de</category>
+        <category>iptables</category>
+        <category>layer.ae</category>
+        <category>prohosting24.de</category>
+        <category>skrime.eu</category>
+        <category>suble.io</category>
+        <category>搬瓦工</category>
+        <category>dogyun</category>
+        <category>测评</category>
+        <category>软考</category>
+        <item>
+            <guid isPermalink="true">http://www.seekvps.com/2024/01/15/suble.io/</guid>
+            <title>suble.io 月付11元丹麦测评</title>
+            <link>http://www.seekvps.com/2024/01/15/suble.io/</link>
+            <category>suble.io</category>
+            <pubDate>Mon, 15 Jan 2024 09:07:14 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;YABS&#34;&gt;&lt;a href=&#34;#YABS&#34; class=&#34;headerlink&#34; title=&#34;YABS&#34;&gt;&lt;/a&gt;YABS&lt;/h1&gt;&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+#              Yet-Another-Bench-Script              #
+#                     v2023-11-24                    #
+# https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;masonr&amp;#x2F;yet-another-bench-script #
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+
+Tue Nov 28 05:01:24 PM CST 2023
+
+Basic System Information:
+---------------------------------
+Uptime     : 5 days, 6 hours, 36 minutes
+Processor  : AMD Ryzen 5 3600 6-Core Processor
+CPU cores  : 1 @ 3593.400 MHz
+AES-NI     : ✔ Enabled
+VM-x&amp;#x2F;AMD-V : ❌ Disabled
+RAM        : 952.0 MiB
+Swap       : 2.0 GiB
+Disk       : 14.7 GiB
+Distro     : Debian GNU&amp;#x2F;Linux 12 (bookworm)
+Kernel     : 6.1.0-13-cloud-amd64
+VM Type    : XEN
+IPv4&amp;#x2F;IPv6  : ✔ Online &amp;#x2F; ✔ Online
+
+IPv6 Network Information:
+---------------------------------
+ISP        : Stacket Group ApS
+ASN        : AS199545 Stacket Group ApS
+Host       : Stacket Group ApS
+Location   : Copenhagen, Capital Region (84)
+Country    : Denmark
+
+fio Disk Speed Tests (Mixed R&amp;#x2F;W 50&amp;#x2F;50) (Partition &amp;#x2F;dev&amp;#x2F;xvda1):
+---------------------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 39.24 MB&amp;#x2F;s    (9.8k) | 36.92 MB&amp;#x2F;s     (576)
+Write      | 39.32 MB&amp;#x2F;s    (9.8k) | 37.19 MB&amp;#x2F;s     (581)
+Total      | 78.56 MB&amp;#x2F;s   (19.6k) | 74.12 MB&amp;#x2F;s    (1.1k)
+           |                      |                     
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 137.84 MB&amp;#x2F;s    (269) | 91.65 MB&amp;#x2F;s      (89)
+Write      | 145.17 MB&amp;#x2F;s    (283) | 97.75 MB&amp;#x2F;s      (95)
+Total      | 283.01 MB&amp;#x2F;s    (552) | 189.41 MB&amp;#x2F;s    (184)
+
+iperf3 Network Speed Tests (IPv4):
+---------------------------------
+Provider        | Location (Link)           | Send Speed      | Recv Speed      | Ping           
+-----           | -----                     | ----            | ----            | ----           
+Clouvider       | London, UK (10G)          | 816 Mbits&amp;#x2F;sec   | 53.3 Mbits&amp;#x2F;sec  | 31.4 ms        
+Scaleway        | Paris, FR (10G)           | 813 Mbits&amp;#x2F;sec   | busy            | 24.8 ms        
+NovoServe       | North Holland, NL (40G)   | 854 Mbits&amp;#x2F;sec   | 747 Mbits&amp;#x2F;sec   | 12.8 ms        
+Uztelecom       | Tashkent, UZ (10G)        | 802 Mbits&amp;#x2F;sec   | 34.2 Mbits&amp;#x2F;sec  | 84.0 ms        
+Clouvider       | NYC, NY, US (10G)         | 781 Mbits&amp;#x2F;sec   | 32.6 Mbits&amp;#x2F;sec  | 80.4 ms        
+Clouvider       | Dallas, TX, US (10G)      | 497 Mbits&amp;#x2F;sec   | 6.44 Mbits&amp;#x2F;sec  | 113 ms         
+Clouvider       | Los Angeles, CA, US (10G) | 712 Mbits&amp;#x2F;sec   | 12.1 Mbits&amp;#x2F;sec  | 148 ms         
+
+iperf3 Network Speed Tests (IPv6):
+---------------------------------
+Provider        | Location (Link)           | Send Speed      | Recv Speed      | Ping           
+-----           | -----                     | ----            | ----            | ----           
+Clouvider       | London, UK (10G)          | 755 Mbits&amp;#x2F;sec   | 51.0 Mbits&amp;#x2F;sec  | 31.4 ms        
+Scaleway        | Paris, FR (10G)           | 769 Mbits&amp;#x2F;sec   | 56.6 Mbits&amp;#x2F;sec  | 615 ms         
+NovoServe       | North Holland, NL (40G)   | 799 Mbits&amp;#x2F;sec   | 683 Mbits&amp;#x2F;sec   | 12.8 ms        
+Uztelecom       | Tashkent, UZ (10G)        | 732 Mbits&amp;#x2F;sec   | 23.5 Mbits&amp;#x2F;sec  | 82.8 ms        
+Clouvider       | NYC, NY, US (10G)         | 704 Mbits&amp;#x2F;sec   | 31.3 Mbits&amp;#x2F;sec  | 79.7 ms        
+Clouvider       | Dallas, TX, US (10G)      | 663 Mbits&amp;#x2F;sec   | 20.9 Mbits&amp;#x2F;sec  | 113 ms         
+Clouvider       | Los Angeles, CA, US (10G) | 667 Mbits&amp;#x2F;sec   | 18.6 Mbits&amp;#x2F;sec  | 146 ms         
+
+Geekbench 6 Benchmark Test:
+---------------------------------
+Test            | Value                         
+                |                               
+Single Core     | 938                           
+Multi Core      | 591                           
+Full Test       | https:&amp;#x2F;&amp;#x2F;browser.geekbench.com&amp;#x2F;v6&amp;#x2F;cpu&amp;#x2F;3756399
+
+YABS completed in 24 min 38 sec&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;VPS融合怪测试&#34;&gt;&lt;a href=&#34;#VPS融合怪测试&#34; class=&#34;headerlink&#34; title=&#34;VPS融合怪测试&#34;&gt;&lt;/a&gt;VPS融合怪测试&lt;/h1&gt;&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;--------------------- A Bench Script By spiritlhl ----------------------
+                   测评频道: https:&amp;#x2F;&amp;#x2F;t.me&amp;#x2F;vps_reviews                    
+版本：2023.11.24
+更新日志：VPS融合怪测试(集百家之长)                       
+---------------------基础信息查询--感谢所有开源项目---------------------
+ CPU 型号          : AMD Ryzen 5 3600 6-Core Processor
+ CPU 核心数        : 1
+ CPU 频率          : 3593.400 MHz
+ CPU 缓存          : L1: 32.00 KB &amp;#x2F; L2: 512.00 KB &amp;#x2F; L3: 32.00 MB
+ 硬盘空间          : 2.91 GiB &amp;#x2F; 14.66 GiB
+ 启动盘路径        : &amp;#x2F;dev&amp;#x2F;xvda1
+ 内存              : 134.82 MiB &amp;#x2F; 952.02 MiB
+ Swap              : 47.79 MiB &amp;#x2F; 2.00 GiB
+ 系统在线时间      : 5 days, 7 hour 4 min
+ 负载              : 0.12, 0.61, 0.65
+ 系统              : Debian GNU&amp;#x2F;Linux 12 (bookworm) (x86_64)
+ AES-NI指令集      : ✔ Enabled
+ VM-x&amp;#x2F;AMD-V支持    : ❌ Disabled
+ 架构              : x86_64 (64 Bit)
+ 内核              : 6.1.0-13-cloud-amd64
+ TCP加速方式       : bbr
+ 虚拟化架构        : Xen Hypervisor
+ NAT类型           : 开放型
+ IPV4 ASN          : AS199545 Stacket Group ApS
+ IPV4 位置         : Copenhagen &amp;#x2F; Capital Region &amp;#x2F; DK
+ IPV6 ASN          : AS199545 Stacket Group Aps
+ IPV6 位置         : Copenhagen &amp;#x2F; DK-84
+---------------------CPU测试--感谢lemonbench开源------------------------
+ -&amp;gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)
+ 1 线程测试(1核)得分:           1595 Scores
+---------------------内存测试--感谢lemonbench开源-----------------------
+ -&amp;gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)
+ 单线程读测试:          38734.01 MB&amp;#x2F;s
+ 单线程写测试:          17490.68 MB&amp;#x2F;s
+------------------磁盘dd读写测试--感谢lemonbench开源--------------------
+ -&amp;gt; 磁盘IO测试中 (4K Block&amp;#x2F;1M Block, Direct Mode)
+ 测试操作               写速度                                  读速度
+ 100MB-4K Block         33.2 MB&amp;#x2F;s (8112 IOPS, 3.16s)            38.9 MB&amp;#x2F;s (9487 IOPS, 2.70s)
+ 1GB-1M Block           65.6 MB&amp;#x2F;s (63 IOPS, 15.99s)             813 MB&amp;#x2F;s (774 IOPS, 1.29s)
+---------------------磁盘fio读写测试--感谢yabs开源----------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 33.08 MB&amp;#x2F;s    (8.2k) | 48.66 MB&amp;#x2F;s     (760)
+Write      | 33.13 MB&amp;#x2F;s    (8.2k) | 48.90 MB&amp;#x2F;s     (764)
+Total      | 66.22 MB&amp;#x2F;s   (16.5k) | 97.56 MB&amp;#x2F;s    (1.5k)           |                      |                     
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 68.89 MB&amp;#x2F;s     (134) | 71.77 MB&amp;#x2F;s      (70)
+Write      | 72.55 MB&amp;#x2F;s     (141) | 76.55 MB&amp;#x2F;s      (74)
+Total      | 141.44 MB&amp;#x2F;s    (275) | 148.33 MB&amp;#x2F;s    (144)
+---------------------流媒体解锁--感谢sjlleo开源-------------------------
+以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用
+----------------Youtube----------------
+[IPv4]
+连接方式: Google Global CacheCDN (ISP Cooperation)
+ISP运营商: GLOBALCONNECT
+视频缓存节点地域: 丹麦 哥本哈根(CPH2)
+Youtube识别地域: 无信息(null)
+[IPv6]
+连接方式: Google Global CacheCDN (ISP Cooperation)
+ISP运营商: TDC
+视频缓存节点地域: 丹麦 哥本哈根(CPH8)
+Youtube识别地域: 丹麦(DK)
+----------------Netflix----------------
+[IPv4]
+您的出口IP完整解锁Netflix，支持非自制剧的观看
+NF所识别的IP地域信息：丹麦
+[IPv6]
+您的出口IP完整解锁Netflix，支持非自制剧的观看
+NF所识别的IP地域信息：丹麦
+---------------DisneyPlus---------------
+[IPv4]
+当前IPv4出口解锁DisneyPlus
+区域：丹麦区
+[IPv6]
+当前IPv6出口解锁DisneyPlus
+区域：丹麦区
+解锁Youtube，Netflix，DisneyPlus上面和下面进行比较，不同之处自行判断
+----------------流媒体解锁--感谢RegionRestrictionCheck开源--------------
+ 以下为IPV4网络测试，若无IPV4网络则无输出
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;[ Multination ]&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+ Dazn:                                  Unsupport
+ HotStar:                               No
+ Disney+:                               No
+ Netflix:                               Yes (Region: DK)
+ YouTube Premium:                       Yes (Region: DK)
+ Amazon Prime Video:                    Yes (Region: DK)
+ TVBAnywhere+:                          Failed
+ iQyi Oversea Region:                   INTL
+ Viu.com:                               No
+ YouTube CDN:                           GLOBALCONNECT in Copenhagen 
+ Netflix Preferred CDN:                 Associated with [] in [Copenhagen ]
+ Steam Currency:                        EUR
+ ChatGPT:                               Yes
+ Bing Region:                           DK
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+ 以下为IPV6网络测试，若无IPV6网络则无输出
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;[ Multination ]&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+ Dazn:                                  Failed (Network Connection)
+ HotStar:                               No
+ Disney+:                               No
+ Netflix:                               Yes (Region: DK)
+ YouTube Premium:                       Yes (Region: DK)
+ Amazon Prime Video:                    Unsupported
+ TVBAnywhere+:                          Failed (Network Connection)
+ iQyi Oversea Region:                   Failed
+ Viu.com:                               Failed
+ YouTube CDN:                           TDC in Copenhagen 
+ Netflix Preferred CDN:                 Associated with [] in [Copenhagen ]
+ Steam Currency:                        Failed (Network Connection)
+ ChatGPT:                               Failed
+ Bing Region:                           DK
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+---------------TikTok解锁--感谢lmc999的源脚本及fscarmen PR--------------
+ Tiktok Region:         【DK】
+-------------------欺诈分数以及IP质量检测--本脚本原创-------------------
+数据仅作参考，不代表100%准确，如果和实际情况不一致请手动查询多个数据库比对
+以下为各数据库编号，输出结果后将自带数据库来源对应的编号
+ipinfo数据库 ①  | scamalytics数据库 ②  | virustotal数据库 ③  | abuseipdb数据库 ④  | ip2location数据库   ⑤
+ip-api数据库 ⑥  | ipwhois数据库     ⑦  | ipregistry数据库 ⑧  | ipdata数据库    ⑨  | ipgeolocation数据库 ⑩
+欺诈分数(越低越好): 0②
+abuse得分(越低越好): 1④
+IP类型: 
+  使用类型(usage_type):hosting①  Commercial⑤  business⑧  business⑨  
+  公司类型(company_type):hosting①  business⑧  
+  云服务提供商(cloud_provider):  No⑧ 
+  数据中心(datacenter):  No⑥ ⑨ 
+  移动网络(mobile):  No⑥ 
+  代理(proxy):  No① ② ⑥ ⑦ ⑧ ⑨ ⑩ 
+  VPN(vpn):  No① ② ⑦ ⑧ 
+  TOR(tor):  No① ② ⑦ ⑧ ⑨ 
+  TOR出口(tor_exit):  No⑧ 
+  搜索引擎机器人(search_engine_robot):② 
+  匿名代理(anonymous):  No⑦ ⑧ ⑨ 
+  攻击方(attacker):  No⑧ ⑨ 
+  滥用者(abuser):  No⑧ ⑨ 
+  威胁(threat):  No⑧ ⑨ 
+  iCloud中继(icloud_relay):  No① ⑧ ⑨ 
+  未分配IP(bogon):  No⑧ ⑨ 
+黑名单记录统计(有多少个黑名单网站有记录): 无害0 恶意0 可疑0 未检测88 ③
+Google搜索可行性：YES
+------以下为IPV6检测------
+欺诈分数(越低越好): 0②
+abuse得分(越低越好): 0④
+IP类型: Commercial⑤
+----------------三网回程--感谢zhanghanyun&amp;#x2F;backtrace开源-----------------
+国家: DK 城市: Copenhagen 服务商: AS199545 Stacket Group ApS
+北京电信 219.141.136.12  电信163 [普通线路]           
+北京联通 202.106.50.1    联通4837[普通线路]           
+北京移动 221.179.155.161 移动CMI [普通线路]           
+上海电信 202.96.209.133  电信163 [普通线路]           
+上海联通 210.22.97.1     联通4837[普通线路]           
+上海移动 211.136.112.200 移动CMI [普通线路]           
+广州电信 58.60.188.222   电信163 [普通线路]           
+广州联通 210.21.196.6    联通4837[普通线路]           
+广州移动 120.196.165.24  移动CMI [普通线路]           
+成都电信 61.139.2.69     电信163 [普通线路]           
+成都联通 119.6.6.6       联通4837[普通线路]           
+成都移动 211.137.96.205  移动CMI [普通线路]           
+---------------------回程路由--感谢fscarmen开源及PR---------------------
+依次测试电信&amp;#x2F;联通&amp;#x2F;移动经过的地区及线路，核心程序来自ipip.net或nexttrace，请知悉!
+广州电信 58.60.188.222
+0.34 ms         AS199545 丹麦 首都大区 哥本哈根
+1.07 ms         AS31027 丹麦 首都大区 哥本哈根 globalconnect.net
+1.87 ms         AS31027 [DK-GLOBALCONNECT] 丹麦 首都大区 哥本哈根 globalconnect.net
+4.51 ms         AS12552 丹麦 罗斯基勒 globalconnect.net
+31.05 ms        AS12552 英国 英格兰 伦敦 globalconnect.net
+367.49 ms       AS4134 [CHINANET-BB] 中国 北京市 chinatelecom.com.cn 电信
+291.05 ms       AS4134 [CHINANET-BB] 中国 广东省 广州市 chinatelecom.com.cn 电信
+506.90 ms       AS4134 [CHINANET-GD] 中国 广东省 深圳市 chinatelecom.com.cn 电信
+295.33 ms       AS4134 中国 广东省 深圳市 福田区 chinatelecom.com.cn 电信
+广州联通 210.21.196.6
+0.49 ms         AS199545 丹麦 首都大区 哥本哈根
+1.37 ms         AS31027 丹麦 首都大区 哥本哈根 globalconnect.net
+1.77 ms         AS31027 [DK-GLOBALCONNECT] 丹麦 首都大区 哥本哈根 globalconnect.net
+2.93 ms         AS1299 [TELIANET] 丹麦 首都大区 哥本哈根 arelion.com
+2.25 ms         AS1299 [ARELION-NET] 丹麦 首都大区 哥本哈根 arelion.com
+14.23 ms        AS4837 [CU169-BACKBONE] 德国 黑森州 美茵河畔法兰克福 chinaunicom.cn 联通
+156.83 ms       AS4837 [CU169-BACKBONE] 中国 广东省 广州市 chinaunicom.cn 联通
+168.50 ms       AS4837 [CU169-BACKBONE] 中国 广东省 广州市 chinaunicom.cn 联通
+182.45 ms       AS17816 [UNICOM-GD] 中国 广东省 深圳市 chinaunicom.cn 联通
+173.90 ms       AS17623 [APNIC-AP] 中国 广东省 深圳市 chinaunicom.cn 联通
+163.77 ms       AS17623 [APNIC-AP] 中国 广东省 深圳市 宝安区 chinaunicom.cn 联通
+广州移动 120.196.165.24
+0.47 ms         AS199545 丹麦 首都大区 哥本哈根
+1.58 ms         AS31027 丹麦 首都大区 哥本哈根 globalconnect.net
+2.03 ms         AS31027 [DK-GLOBALCONNECT] 丹麦 首都大区 哥本哈根 globalconnect.net
+2.15 ms         AS1299 [TELIANET] 丹麦 首都大区 哥本哈根 arelion.com
+* ms    AS1299 [ARELION-NET] 丹麦 首都大区 哥本哈根 arelion.com
+14.33 ms        AS1299 [ARELION-NET] 德国 黑森州 美因河畔法兰克福 arelion.com
+14.01 ms        AS1299 [ARELION-NET] 德国 黑森州 美因河畔法兰克福 arelion.com
+15.28 ms        AS1299 [ARELION-NET] 德国 黑森州 美因河畔法兰克福 Telia-CM-Cust arelion.com
+16.66 ms        AS58453 [CMI-INT] 德国 黑森州 美茵河畔法兰克福 cmi.chinamobile.com 移动
+264.11 ms       AS58453 [CMI-INT] 中国 香港 cmi.chinamobile.com 移动
+263.46 ms       AS9808 [CMNET] 中国 广东省 广州市 chinamobile.com 移动
+263.58 ms       AS9808 [CMNET] 中国 广东省 广州市 chinamobile.com 移动
+259.12 ms       AS9808 [CMNET] 中国 广东省 广州市 chinamobile.com 移动
+293.43 ms       AS9808 [CMNET] 中国 海南省 海口市 chinamobile.com 移动
+266.49 ms       AS56040 [APNIC-AP] 中国 广东省 深圳市 chinamobile.com 移动
+--------------------自动更新测速节点列表--本脚本原创--------------------
+位置             上传速度        下载速度        延迟     丢包率
+Speedtest.net    891.52 Mbps     744.87 Mbps     0.93     0.0%
+法兰克福         799.89 Mbps     236.72 Mbps     11.50    3.8%
+洛杉矶           425.26 Mbps     331.87 Mbps     145.59   0.0%
+联通海南         350.45 Mbps     151.61 Mbps     189.14   NULL
+电信天津5G       40.00 Mbps      8.42 Mbps       168.80   0.0%
+移动硬核通信     242.26 Mbps     2.24 Mbps       283.24   NULL
+------------------------------------------------------------------------
+ 总共花费      : 7 分 35 秒
+ 时间          : Tue Nov 28 17:36:46 CST 2023
+------------------------------------------------------------------------
+  短链:
+    http:&amp;#x2F;&amp;#x2F;paste.spiritlhl.net&amp;#x2F;u&amp;#x2F;1nSiKp.txt&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+ ]]></description>
+        </item>
+    </channel>
+</rss>
