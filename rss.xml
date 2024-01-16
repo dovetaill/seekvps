@@ -5,23 +5,54 @@
         <link>http://www.seekvps.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 15 Jan 2024 15:10:28 +0800</pubDate>
-        <lastBuildDate>Mon, 15 Jan 2024 15:10:28 +0800</lastBuildDate>
+        <pubDate>Tue, 16 Jan 2024 09:07:14 +0800</pubDate>
+        <lastBuildDate>Tue, 16 Jan 2024 09:07:14 +0800</lastBuildDate>
         <category>akile.io</category>
         <category>Debian</category>
         <category>MarkDownPad2</category>
+        <category>Mysql</category>
         <category>OVH</category>
         <category>Telegram</category>
         <category>bero-host.de</category>
         <category>iptables</category>
         <category>layer.ae</category>
         <category>prohosting24.de</category>
+        <category>revivehost</category>
         <category>skrime.eu</category>
         <category>suble.io</category>
         <category>搬瓦工</category>
         <category>dogyun</category>
         <category>测评</category>
         <category>软考</category>
+        <item>
+            <guid isPermalink="true">http://www.seekvps.com/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/</guid>
+            <title>MySQL如何利用索引优化ORDER BY排序语</title>
+            <link>http://www.seekvps.com/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/</link>
+            <category>Mysql</category>
+            <pubDate>Tue, 16 Jan 2024 09:07:14 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;序&#34;&gt;&lt;a href=&#34;#序&#34; class=&#34;headerlink&#34; title=&#34;序&#34;&gt;&lt;/a&gt;序&lt;/h1&gt;&lt;p&gt;MySQL索引通常是被用于提高WHERE条件的数据行匹配或者执行联结操作时匹配其它表的数据行的搜索速度。&lt;/p&gt;
+&lt;p&gt;MySQL也能利用索引来快速地执行ORDER BY和GROUP BY语句的排序和分组操作。&lt;/p&gt;
+&lt;p&gt;通过索引优化来实现MySQL的ORDER BY语句优化&lt;/p&gt;
+&lt;h1 id=&#34;ORDER-BY的索引优化&#34;&gt;&lt;a href=&#34;#ORDER-BY的索引优化&#34; class=&#34;headerlink&#34; title=&#34;ORDER BY的索引优化&#34;&gt;&lt;/a&gt;ORDER BY的索引优化&lt;/h1&gt;&lt;p&gt;如果一个SQL语句形如：SELECT [column1],[column2],…. FROM [TABLE] ORDER BY [sort];&lt;br&gt;在[sort]这个栏位上建立索引就可以实现利用索引进行order by 优化。&lt;/p&gt;
+&lt;h1 id=&#34;WHERE-ORDER-BY的索引优化&#34;&gt;&lt;a href=&#34;#WHERE-ORDER-BY的索引优化&#34; class=&#34;headerlink&#34; title=&#34;WHERE + ORDER BY的索引优化&#34;&gt;&lt;/a&gt;WHERE + ORDER BY的索引优化&lt;/h1&gt;&lt;p&gt;SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] &amp;#x3D; [value] ORDER BY [sort];&lt;br&gt;建立一个联合索引(columnX,sort)来实现order by 优化。&lt;/p&gt;
+&lt;p&gt;注意：如果columnX对应多个值，如下面语句就无法利用索引来实现order by的优化&lt;br&gt;SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] IN ([value1],[value2],…) ORDER BY[sort];&lt;/p&gt;
+&lt;h1 id=&#34;WHERE-多个字段ORDER-BY&#34;&gt;&lt;a href=&#34;#WHERE-多个字段ORDER-BY&#34; class=&#34;headerlink&#34; title=&#34;WHERE+ 多个字段ORDER BY&#34;&gt;&lt;/a&gt;WHERE+ 多个字段ORDER BY&lt;/h1&gt;&lt;p&gt;SELECT * FROM [table] WHERE uid&amp;#x3D;1 ORDER x,y LIMIT 0,10;&lt;br&gt;建立索引(uid,x,y)实现order by的优化,比建立(x,y,uid)索引效果要好得多。&lt;/p&gt;
+&lt;p&gt;MySQL Order By不能使用索引来优化排序的情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对不同的索引键做 ORDER BY ：(key1,key2分别建立索引)&lt;br&gt;SELECT * FROM t1 ORDER BY key1, key2;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在非连续的索引键部分上做 ORDER BY：(key_part1,key_part2建立联合索引;key2建立索引)&lt;br&gt;SELECT * FROM t1 WHERE key2&amp;#x3D;constant ORDER BY key_part2;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;同时使用了 ASC 和 DESC：(key_part1,key_part2建立联合索引)&lt;br&gt;SELECT * FROM t1 ORDER BY key_part1 DESC, key_part2 ASC;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用于搜索记录的索引键和做 ORDER BY 的不是同一个：(key1,key2分别建立索引)&lt;br&gt;SELECT * FROM t1 WHERE key2&amp;#x3D;constant ORDER BY key1;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果在WHERE和ORDER BY的栏位上应用表达式(函数)时，则无法利用索引来实现order by的优化&lt;br&gt;SELECT * FROM t1 ORDER BY YEAR(logindate) LIMIT 0,10;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;特别提示&#34;&gt;&lt;a href=&#34;#特别提示&#34; class=&#34;headerlink&#34; title=&#34;特别提示&#34;&gt;&lt;/a&gt;特别提示&lt;/h1&gt;&lt;p&gt;1&amp;gt;mysql一次查询只能使用一个索引。如果要对多个字段使用索引，建立复合索引。&lt;br&gt;2&amp;gt;在ORDER BY操作中，MySQL只有在排序条件不是一个查询条件表达式的情况下才使用索引。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://www.seekvps.com/2024/01/15/%E4%BD%BF%E7%94%A8Dnsmasq+SNIproxy%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E8%A7%A3%E5%86%B3%E6%B2%B9%E7%AE%A1%E9%80%81%E4%B8%AD,%E8%A7%A3%E9%94%81%E5%A5%88%E9%A3%9E/</guid>
             <title></title>
@@ -705,6 +736,81 @@ Speedtest.net    5815.01 Mbps    9294.84 Mbps    0.17     0.0%
 &lt;p&gt;直接删除限制文件&lt;/p&gt;
 &lt;p&gt;sudo rm &amp;#x2F;usr&amp;#x2F;lib&amp;#x2F;python3.11&amp;#x2F;EXTERNALLY-MANAGED&lt;/p&gt;
  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://www.seekvps.com/2024/01/15/revivehost%E6%B5%8B%E8%AF%84/</guid>
+            <title>revivehost美国测评</title>
+            <link>http://www.seekvps.com/2024/01/15/revivehost%E6%B5%8B%E8%AF%84/</link>
+            <category>revivehost</category>
+            <pubDate>Mon, 15 Jan 2024 09:07:14 +0800</pubDate>
+            <description><![CDATA[ &lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;root@ss:~# curl -sL yabs.sh | bash -s --
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+#              Yet-Another-Bench-Script              #
+#                     v2023-09-06                    #
+# https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;masonr&amp;#x2F;yet-another-bench-script #
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+
+Mon 13 Nov 2023 09:48:39 PM EST
+
+Basic System Information:
+---------------------------------
+Uptime     : 43 days, 15 hours, 36 minutes
+Processor  : Intel(R) Xeon(R) CPU E5-2623 v4 @ 2.60GHz
+CPU cores  : 1 @ 2596.990 MHz
+AES-NI     : ✔ Enabled
+VM-x&amp;#x2F;AMD-V : ✔ Enabled
+RAM        : 976.4 MiB
+Swap       : 1024.0 MiB
+Disk       : 8.8 GiB
+Distro     : Debian GNU&amp;#x2F;Linux 11 (bullseye)
+Kernel     : 5.10.0-8-amd64
+VM Type    : KVM
+IPv4&amp;#x2F;IPv6  : ✔ Online &amp;#x2F; ❌ Offline
+
+IPv4 Network Information:
+---------------------------------
+ISP        : ReviveHost
+ASN        : AS31916 ReviveHost
+Host       : ReviveHost
+Location   : Miami, Florida (FL)
+Country    : United States
+
+fio Disk Speed Tests (Mixed R&amp;#x2F;W 50&amp;#x2F;50):
+---------------------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 1.61 MB&amp;#x2F;s      (404) | 24.11 MB&amp;#x2F;s     (376)
+Write      | 1.65 MB&amp;#x2F;s      (412) | 24.57 MB&amp;#x2F;s     (383)
+Total      | 3.26 MB&amp;#x2F;s      (816) | 48.69 MB&amp;#x2F;s     (759)
+           |                      |                     
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 53.14 MB&amp;#x2F;s     (103) | 78.41 MB&amp;#x2F;s      (76)
+Write      | 56.19 MB&amp;#x2F;s     (109) | 83.63 MB&amp;#x2F;s      (81)
+Total      | 109.34 MB&amp;#x2F;s    (212) | 162.05 MB&amp;#x2F;s    (157)
+
+iperf3 Network Speed Tests (IPv4):
+---------------------------------
+Provider        | Location (Link)           | Send Speed      | Recv Speed      | Ping           
+-----           | -----                     | ----            | ----            | ----           
+Clouvider       | London, UK (10G)          | 19.8 Mbits&amp;#x2F;sec  | 24.4 Mbits&amp;#x2F;sec  | 114 ms         
+Scaleway        | Paris, FR (10G)           | busy            | busy            | 126 ms         
+NovoServe       | North Holland, NL (40G)   | 17.0 Mbits&amp;#x2F;sec  | 67.6 Mbits&amp;#x2F;sec  | 127 ms         
+Uztelecom       | Tashkent, UZ (10G)        | busy            | 8.99 Mbits&amp;#x2F;sec  | 221 ms         
+Clouvider       | NYC, NY, US (10G)         | 39.2 Mbits&amp;#x2F;sec  | 41.1 Mbits&amp;#x2F;sec  | 56.9 ms        
+Clouvider       | Dallas, TX, US (10G)      | busy            | 5.71 Mbits&amp;#x2F;sec  | 161 ms         
+Clouvider       | Los Angeles, CA, US (10G) | 30.1 Mbits&amp;#x2F;sec  | 45.8 Mbits&amp;#x2F;sec  | 72.4 ms        
+
+Geekbench 6 Benchmark Test:
+---------------------------------
+Test            | Value                         
+                |                               
+Single Core     | 209                           
+Multi Core      | 117                           
+Full Test       | https:&amp;#x2F;&amp;#x2F;browser.geekbench.com&amp;#x2F;v6&amp;#x2F;cpu&amp;#x2F;3539000
+
+YABS completed in 117 min 30 sec
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://www.seekvps.com/2024/01/15/suble.io/</guid>
@@ -2105,7 +2211,7 @@ iperf3 &lt;span class=&#34;token class-name&#34;&gt;Network&lt;/span&gt; &lt;spa
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;重启MarkdownPad 2&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;喜闻乐见&#34;&gt;&lt;a href=&#34;#喜闻乐见&#34; class=&#34;headerlink&#34; title=&#34;喜闻乐见&#34;&gt;&lt;/a&gt;喜闻乐见&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;mailto:&amp;#83;&amp;#111;&amp;#x61;&amp;#x72;&amp;#51;&amp;#54;&amp;#x30;&amp;#64;&amp;#x6c;&amp;#105;&amp;#x76;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#83;&amp;#111;&amp;#x61;&amp;#x72;&amp;#51;&amp;#54;&amp;#x30;&amp;#64;&amp;#x6c;&amp;#105;&amp;#x76;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;喜闻乐见&#34;&gt;&lt;a href=&#34;#喜闻乐见&#34; class=&#34;headerlink&#34; title=&#34;喜闻乐见&#34;&gt;&lt;/a&gt;喜闻乐见&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;mailto:&amp;#x53;&amp;#111;&amp;#97;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#64;&amp;#x6c;&amp;#105;&amp;#118;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#x53;&amp;#111;&amp;#97;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#64;&amp;#x6c;&amp;#105;&amp;#118;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&amp;#x2F;sQytXJUQl&amp;#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&amp;#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&amp;#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&amp;#x3D;&amp;#x3D;&lt;/p&gt;
  ]]></description>
         </item>

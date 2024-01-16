@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>VPS探索者 • Posts by &#34;mysql&#34; tag</title>
+        <link>http://www.seekvps.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 16 Jan 2024 09:07:14 +0800</pubDate>
+        <lastBuildDate>Tue, 16 Jan 2024 09:07:14 +0800</lastBuildDate>
+        <category>akile.io</category>
+        <category>Debian</category>
+        <category>MarkDownPad2</category>
+        <category>Mysql</category>
+        <category>OVH</category>
+        <category>Telegram</category>
+        <category>bero-host.de</category>
+        <category>iptables</category>
+        <category>layer.ae</category>
+        <category>prohosting24.de</category>
+        <category>revivehost</category>
+        <category>skrime.eu</category>
+        <category>suble.io</category>
+        <category>搬瓦工</category>
+        <category>dogyun</category>
+        <category>测评</category>
+        <category>软考</category>
+        <item>
+            <guid isPermalink="true">http://www.seekvps.com/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/</guid>
+            <title>MySQL如何利用索引优化ORDER BY排序语</title>
+            <link>http://www.seekvps.com/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/</link>
+            <category>Mysql</category>
+            <pubDate>Tue, 16 Jan 2024 09:07:14 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;序&#34;&gt;&lt;a href=&#34;#序&#34; class=&#34;headerlink&#34; title=&#34;序&#34;&gt;&lt;/a&gt;序&lt;/h1&gt;&lt;p&gt;MySQL索引通常是被用于提高WHERE条件的数据行匹配或者执行联结操作时匹配其它表的数据行的搜索速度。&lt;/p&gt;
+&lt;p&gt;MySQL也能利用索引来快速地执行ORDER BY和GROUP BY语句的排序和分组操作。&lt;/p&gt;
+&lt;p&gt;通过索引优化来实现MySQL的ORDER BY语句优化&lt;/p&gt;
+&lt;h1 id=&#34;ORDER-BY的索引优化&#34;&gt;&lt;a href=&#34;#ORDER-BY的索引优化&#34; class=&#34;headerlink&#34; title=&#34;ORDER BY的索引优化&#34;&gt;&lt;/a&gt;ORDER BY的索引优化&lt;/h1&gt;&lt;p&gt;如果一个SQL语句形如：SELECT [column1],[column2],…. FROM [TABLE] ORDER BY [sort];&lt;br&gt;在[sort]这个栏位上建立索引就可以实现利用索引进行order by 优化。&lt;/p&gt;
+&lt;h1 id=&#34;WHERE-ORDER-BY的索引优化&#34;&gt;&lt;a href=&#34;#WHERE-ORDER-BY的索引优化&#34; class=&#34;headerlink&#34; title=&#34;WHERE + ORDER BY的索引优化&#34;&gt;&lt;/a&gt;WHERE + ORDER BY的索引优化&lt;/h1&gt;&lt;p&gt;SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] &amp;#x3D; [value] ORDER BY [sort];&lt;br&gt;建立一个联合索引(columnX,sort)来实现order by 优化。&lt;/p&gt;
+&lt;p&gt;注意：如果columnX对应多个值，如下面语句就无法利用索引来实现order by的优化&lt;br&gt;SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] IN ([value1],[value2],…) ORDER BY[sort];&lt;/p&gt;
+&lt;h1 id=&#34;WHERE-多个字段ORDER-BY&#34;&gt;&lt;a href=&#34;#WHERE-多个字段ORDER-BY&#34; class=&#34;headerlink&#34; title=&#34;WHERE+ 多个字段ORDER BY&#34;&gt;&lt;/a&gt;WHERE+ 多个字段ORDER BY&lt;/h1&gt;&lt;p&gt;SELECT * FROM [table] WHERE uid&amp;#x3D;1 ORDER x,y LIMIT 0,10;&lt;br&gt;建立索引(uid,x,y)实现order by的优化,比建立(x,y,uid)索引效果要好得多。&lt;/p&gt;
+&lt;p&gt;MySQL Order By不能使用索引来优化排序的情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对不同的索引键做 ORDER BY ：(key1,key2分别建立索引)&lt;br&gt;SELECT * FROM t1 ORDER BY key1, key2;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在非连续的索引键部分上做 ORDER BY：(key_part1,key_part2建立联合索引;key2建立索引)&lt;br&gt;SELECT * FROM t1 WHERE key2&amp;#x3D;constant ORDER BY key_part2;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;同时使用了 ASC 和 DESC：(key_part1,key_part2建立联合索引)&lt;br&gt;SELECT * FROM t1 ORDER BY key_part1 DESC, key_part2 ASC;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用于搜索记录的索引键和做 ORDER BY 的不是同一个：(key1,key2分别建立索引)&lt;br&gt;SELECT * FROM t1 WHERE key2&amp;#x3D;constant ORDER BY key1;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果在WHERE和ORDER BY的栏位上应用表达式(函数)时，则无法利用索引来实现order by的优化&lt;br&gt;SELECT * FROM t1 ORDER BY YEAR(logindate) LIMIT 0,10;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;特别提示&#34;&gt;&lt;a href=&#34;#特别提示&#34; class=&#34;headerlink&#34; title=&#34;特别提示&#34;&gt;&lt;/a&gt;特别提示&lt;/h1&gt;&lt;p&gt;1&amp;gt;mysql一次查询只能使用一个索引。如果要对多个字段使用索引，建立复合索引。&lt;br&gt;2&amp;gt;在ORDER BY操作中，MySQL只有在排序条件不是一个查询条件表达式的情况下才使用索引。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

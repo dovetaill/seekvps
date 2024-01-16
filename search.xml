@@ -390,7 +390,7 @@ net<span class="token punctuation">.</span>ipv6<span class="token punctuation">.
 <ol start="3">
 <li>重启MarkdownPad 2</li>
 </ol>
-<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#83;&#111;&#x61;&#x72;&#51;&#54;&#x30;&#64;&#x6c;&#105;&#x76;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#83;&#111;&#x61;&#x72;&#51;&#54;&#x30;&#64;&#x6c;&#105;&#x76;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#x53;&#111;&#97;&#114;&#51;&#54;&#x30;&#64;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x53;&#111;&#97;&#114;&#51;&#54;&#x30;&#64;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <p>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&#x2F;sQytXJUQl&#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&#x3D;&#x3D;</p>
 ]]></content>
       <categories>
@@ -398,6 +398,38 @@ net<span class="token punctuation">.</span>ipv6<span class="token punctuation">.
       </categories>
       <tags>
         <tag>MarkDownPad2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL如何利用索引优化ORDER BY排序语</title>
+    <url>/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>MySQL索引通常是被用于提高WHERE条件的数据行匹配或者执行联结操作时匹配其它表的数据行的搜索速度。</p>
+<p>MySQL也能利用索引来快速地执行ORDER BY和GROUP BY语句的排序和分组操作。</p>
+<p>通过索引优化来实现MySQL的ORDER BY语句优化</p>
+<h1 id="ORDER-BY的索引优化"><a href="#ORDER-BY的索引优化" class="headerlink" title="ORDER BY的索引优化"></a>ORDER BY的索引优化</h1><p>如果一个SQL语句形如：SELECT [column1],[column2],…. FROM [TABLE] ORDER BY [sort];<br>在[sort]这个栏位上建立索引就可以实现利用索引进行order by 优化。</p>
+<h1 id="WHERE-ORDER-BY的索引优化"><a href="#WHERE-ORDER-BY的索引优化" class="headerlink" title="WHERE + ORDER BY的索引优化"></a>WHERE + ORDER BY的索引优化</h1><p>SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] &#x3D; [value] ORDER BY [sort];<br>建立一个联合索引(columnX,sort)来实现order by 优化。</p>
+<p>注意：如果columnX对应多个值，如下面语句就无法利用索引来实现order by的优化<br>SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] IN ([value1],[value2],…) ORDER BY[sort];</p>
+<h1 id="WHERE-多个字段ORDER-BY"><a href="#WHERE-多个字段ORDER-BY" class="headerlink" title="WHERE+ 多个字段ORDER BY"></a>WHERE+ 多个字段ORDER BY</h1><p>SELECT * FROM [table] WHERE uid&#x3D;1 ORDER x,y LIMIT 0,10;<br>建立索引(uid,x,y)实现order by的优化,比建立(x,y,uid)索引效果要好得多。</p>
+<p>MySQL Order By不能使用索引来优化排序的情况</p>
+<ul>
+<li><p>对不同的索引键做 ORDER BY ：(key1,key2分别建立索引)<br>SELECT * FROM t1 ORDER BY key1, key2;</p>
+</li>
+<li><p>在非连续的索引键部分上做 ORDER BY：(key_part1,key_part2建立联合索引;key2建立索引)<br>SELECT * FROM t1 WHERE key2&#x3D;constant ORDER BY key_part2;</p>
+</li>
+<li><p>同时使用了 ASC 和 DESC：(key_part1,key_part2建立联合索引)<br>SELECT * FROM t1 ORDER BY key_part1 DESC, key_part2 ASC;</p>
+</li>
+<li><p>用于搜索记录的索引键和做 ORDER BY 的不是同一个：(key1,key2分别建立索引)<br>SELECT * FROM t1 WHERE key2&#x3D;constant ORDER BY key1;</p>
+</li>
+<li><p>如果在WHERE和ORDER BY的栏位上应用表达式(函数)时，则无法利用索引来实现order by的优化<br>SELECT * FROM t1 ORDER BY YEAR(logindate) LIMIT 0,10;</p>
+</li>
+</ul>
+<h1 id="特别提示"><a href="#特别提示" class="headerlink" title="特别提示"></a>特别提示</h1><p>1&gt;mysql一次查询只能使用一个索引。如果要对多个字段使用索引，建立复合索引。<br>2&gt;在ORDER BY操作中，MySQL只有在排序条件不是一个查询条件表达式的情况下才使用索引。</p>
+]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -2902,6 +2934,84 @@ abuse得分<span class="token punctuation">(</span>越低越好<span class="toke
       </categories>
       <tags>
         <tag>prohosting24.de</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>revivehost美国测评</title>
+    <url>/2024/01/15/revivehost%E6%B5%8B%E8%AF%84/</url>
+    <content><![CDATA[<pre class="line-numbers language-none"><code class="language-none">root@ss:~# curl -sL yabs.sh | bash -s --
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+#              Yet-Another-Bench-Script              #
+#                     v2023-09-06                    #
+# https:&#x2F;&#x2F;github.com&#x2F;masonr&#x2F;yet-another-bench-script #
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+
+Mon 13 Nov 2023 09:48:39 PM EST
+
+Basic System Information:
+---------------------------------
+Uptime     : 43 days, 15 hours, 36 minutes
+Processor  : Intel(R) Xeon(R) CPU E5-2623 v4 @ 2.60GHz
+CPU cores  : 1 @ 2596.990 MHz
+AES-NI     : ✔ Enabled
+VM-x&#x2F;AMD-V : ✔ Enabled
+RAM        : 976.4 MiB
+Swap       : 1024.0 MiB
+Disk       : 8.8 GiB
+Distro     : Debian GNU&#x2F;Linux 11 (bullseye)
+Kernel     : 5.10.0-8-amd64
+VM Type    : KVM
+IPv4&#x2F;IPv6  : ✔ Online &#x2F; ❌ Offline
+
+IPv4 Network Information:
+---------------------------------
+ISP        : ReviveHost
+ASN        : AS31916 ReviveHost
+Host       : ReviveHost
+Location   : Miami, Florida (FL)
+Country    : United States
+
+fio Disk Speed Tests (Mixed R&#x2F;W 50&#x2F;50):
+---------------------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 1.61 MB&#x2F;s      (404) | 24.11 MB&#x2F;s     (376)
+Write      | 1.65 MB&#x2F;s      (412) | 24.57 MB&#x2F;s     (383)
+Total      | 3.26 MB&#x2F;s      (816) | 48.69 MB&#x2F;s     (759)
+           |                      |                     
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 53.14 MB&#x2F;s     (103) | 78.41 MB&#x2F;s      (76)
+Write      | 56.19 MB&#x2F;s     (109) | 83.63 MB&#x2F;s      (81)
+Total      | 109.34 MB&#x2F;s    (212) | 162.05 MB&#x2F;s    (157)
+
+iperf3 Network Speed Tests (IPv4):
+---------------------------------
+Provider        | Location (Link)           | Send Speed      | Recv Speed      | Ping           
+-----           | -----                     | ----            | ----            | ----           
+Clouvider       | London, UK (10G)          | 19.8 Mbits&#x2F;sec  | 24.4 Mbits&#x2F;sec  | 114 ms         
+Scaleway        | Paris, FR (10G)           | busy            | busy            | 126 ms         
+NovoServe       | North Holland, NL (40G)   | 17.0 Mbits&#x2F;sec  | 67.6 Mbits&#x2F;sec  | 127 ms         
+Uztelecom       | Tashkent, UZ (10G)        | busy            | 8.99 Mbits&#x2F;sec  | 221 ms         
+Clouvider       | NYC, NY, US (10G)         | 39.2 Mbits&#x2F;sec  | 41.1 Mbits&#x2F;sec  | 56.9 ms        
+Clouvider       | Dallas, TX, US (10G)      | busy            | 5.71 Mbits&#x2F;sec  | 161 ms         
+Clouvider       | Los Angeles, CA, US (10G) | 30.1 Mbits&#x2F;sec  | 45.8 Mbits&#x2F;sec  | 72.4 ms        
+
+Geekbench 6 Benchmark Test:
+---------------------------------
+Test            | Value                         
+                |                               
+Single Core     | 209                           
+Multi Core      | 117                           
+Full Test       | https:&#x2F;&#x2F;browser.geekbench.com&#x2F;v6&#x2F;cpu&#x2F;3539000
+
+YABS completed in 117 min 30 sec
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>测评</category>
+      </categories>
+      <tags>
+        <tag>revivehost</tag>
       </tags>
   </entry>
   <entry>

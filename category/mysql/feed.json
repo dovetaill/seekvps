@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "VPS探索者 • All posts by \"mysql\" category",
+    "description": "",
+    "home_page_url": "http://www.seekvps.com",
+    "items": [
+        {
+            "id": "http://www.seekvps.com/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/",
+            "url": "http://www.seekvps.com/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/",
+            "title": "MySQL如何利用索引优化ORDER BY排序语",
+            "date_published": "2024-01-16T01:07:14.000Z",
+            "content_html": "<h1 id=\"序\"><a href=\"#序\" class=\"headerlink\" title=\"序\"></a>序</h1><p>MySQL索引通常是被用于提高WHERE条件的数据行匹配或者执行联结操作时匹配其它表的数据行的搜索速度。</p>\n<p>MySQL也能利用索引来快速地执行ORDER BY和GROUP BY语句的排序和分组操作。</p>\n<p>通过索引优化来实现MySQL的ORDER BY语句优化</p>\n<h1 id=\"ORDER-BY的索引优化\"><a href=\"#ORDER-BY的索引优化\" class=\"headerlink\" title=\"ORDER BY的索引优化\"></a>ORDER BY的索引优化</h1><p>如果一个SQL语句形如：SELECT [column1],[column2],…. FROM [TABLE] ORDER BY [sort];<br>在[sort]这个栏位上建立索引就可以实现利用索引进行order by 优化。</p>\n<h1 id=\"WHERE-ORDER-BY的索引优化\"><a href=\"#WHERE-ORDER-BY的索引优化\" class=\"headerlink\" title=\"WHERE + ORDER BY的索引优化\"></a>WHERE + ORDER BY的索引优化</h1><p>SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] &#x3D; [value] ORDER BY [sort];<br>建立一个联合索引(columnX,sort)来实现order by 优化。</p>\n<p>注意：如果columnX对应多个值，如下面语句就无法利用索引来实现order by的优化<br>SELECT [column1],[column2],…. FROM [TABLE] WHERE [columnX] IN ([value1],[value2],…) ORDER BY[sort];</p>\n<h1 id=\"WHERE-多个字段ORDER-BY\"><a href=\"#WHERE-多个字段ORDER-BY\" class=\"headerlink\" title=\"WHERE+ 多个字段ORDER BY\"></a>WHERE+ 多个字段ORDER BY</h1><p>SELECT * FROM [table] WHERE uid&#x3D;1 ORDER x,y LIMIT 0,10;<br>建立索引(uid,x,y)实现order by的优化,比建立(x,y,uid)索引效果要好得多。</p>\n<p>MySQL Order By不能使用索引来优化排序的情况</p>\n<ul>\n<li><p>对不同的索引键做 ORDER BY ：(key1,key2分别建立索引)<br>SELECT * FROM t1 ORDER BY key1, key2;</p>\n</li>\n<li><p>在非连续的索引键部分上做 ORDER BY：(key_part1,key_part2建立联合索引;key2建立索引)<br>SELECT * FROM t1 WHERE key2&#x3D;constant ORDER BY key_part2;</p>\n</li>\n<li><p>同时使用了 ASC 和 DESC：(key_part1,key_part2建立联合索引)<br>SELECT * FROM t1 ORDER BY key_part1 DESC, key_part2 ASC;</p>\n</li>\n<li><p>用于搜索记录的索引键和做 ORDER BY 的不是同一个：(key1,key2分别建立索引)<br>SELECT * FROM t1 WHERE key2&#x3D;constant ORDER BY key1;</p>\n</li>\n<li><p>如果在WHERE和ORDER BY的栏位上应用表达式(函数)时，则无法利用索引来实现order by的优化<br>SELECT * FROM t1 ORDER BY YEAR(logindate) LIMIT 0,10;</p>\n</li>\n</ul>\n<h1 id=\"特别提示\"><a href=\"#特别提示\" class=\"headerlink\" title=\"特别提示\"></a>特别提示</h1><p>1&gt;mysql一次查询只能使用一个索引。如果要对多个字段使用索引，建立复合索引。<br>2&gt;在ORDER BY操作中，MySQL只有在排序条件不是一个查询条件表达式的情况下才使用索引。</p>\n",
+            "tags": [
+                "Mysql"
+            ]
+        }
+    ]
+}
