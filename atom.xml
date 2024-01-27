@@ -3,7 +3,7 @@
     <id>http://www.seekvps.com</id>
     <title>VPS探索者</title>
     <link href="http://www.seekvps.com" />
-    <updated>2024-01-16T01:07:14.000Z</updated>
+    <updated>2024-01-27T12:11:26.628Z</updated>
     <category term="akile.io" />
     <category term="Debian" />
     <category term="MarkDownPad2" />
@@ -17,10 +17,487 @@
     <category term="revivehost" />
     <category term="skrime.eu" />
     <category term="suble.io" />
+    <category term="幻兽帕鲁" />
     <category term="搬瓦工" />
     <category term="dogyun" />
     <category term="测评" />
     <category term="软考" />
+    <entry>
+        <id>http://www.seekvps.com/2024/01/27/%E5%92%B8%E9%B1%BC%E4%BA%91%E4%B8%8E%E7%99%BD%E4%B8%9D%E4%BA%91%E6%B5%8B%E8%AF%95/</id>
+        <title></title>
+        <link rel="alternate" href="http://www.seekvps.com/2024/01/27/%E5%92%B8%E9%B1%BC%E4%BA%91%E4%B8%8E%E7%99%BD%E4%B8%9D%E4%BA%91%E6%B5%8B%E8%AF%95/"/>
+        <content type="html">&lt;p&gt;咸鱼云&lt;br&gt;18.5美元&lt;br&gt;800G&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;--------------------- A Bench Script By spiritlhl ----------------------
+                   测评频道: https:&amp;#x2F;&amp;#x2F;t.me&amp;#x2F;vps_reviews                    
+版本：2024.01.16
+更新日志：VPS融合怪测试(集百家之长)                       
+---------------------基础信息查询--感谢所有开源项目---------------------
+ CPU 型号          : Intel Core Processor (Broadwell, IBRS)
+ CPU 核心数        : 1
+ CPU 频率          : 2596.964 MHz
+ CPU 缓存          : L1: 64.00 KB &amp;#x2F; L2: 4.00 MB &amp;#x2F; L3: 16.00 MB
+ 硬盘空间          : 3.88 GiB &amp;#x2F; 9.34 GiB
+ 启动盘路径        : &amp;#x2F;dev&amp;#x2F;vda2
+ 内存              : 194.29 MiB &amp;#x2F; 976.38 MiB
+ Swap              : [ no swap partition or swap file detected ]
+ 系统在线时间      : 231 days, 2 hour 2 min
+ 负载              : 0.83, 0.22, 0.07
+ 系统              : Debian GNU&amp;#x2F;Linux 11 (bullseye) (x86_64)
+ AES-NI指令集      : ✔ Enabled
+ VM-x&amp;#x2F;AMD-V支持    : ❌ Disabled
+ 架构              : x86_64 (64 Bit)
+ 内核              : 5.10.0-9-amd64
+ TCP加速方式       : bbr
+ 虚拟化架构        : KVM
+ NAT类型           : 开放型
+ IPV4 ASN          : AS41378 Kirino LLC
+ IPV4 位置         : Mountain View &amp;#x2F; California &amp;#x2F; US
+----------------------CPU测试--通过sysbench测试-------------------------
+ -&amp;gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)
+ 1 线程测试(单核)得分:          961 Scores
+---------------------内存测试--感谢lemonbench开源-----------------------
+ -&amp;gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)
+ 单线程读测试:          19101.57 MB&amp;#x2F;s
+ 单线程写测试:          11084.38 MB&amp;#x2F;s
+------------------磁盘dd读写测试--感谢lemonbench开源--------------------
+ -&amp;gt; 磁盘IO测试中 (4K Block&amp;#x2F;1M Block, Direct Mode)
+ 测试操作               写速度                                  读速度
+ 100MB-4K Block         35.9 MB&amp;#x2F;s (8769 IOPS, 2.92s)            47.0 MB&amp;#x2F;s (11471 IOPS, 2.23s)
+ 1GB-1M Block           196 MB&amp;#x2F;s (187 IOPS, 5.36s)              1.2 GB&amp;#x2F;s (1139 IOPS, 0.88s)
+---------------------磁盘fio读写测试--感谢yabs开源----------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 44.04 MB&amp;#x2F;s   (11.0k) | 535.22 MB&amp;#x2F;s   (8.3k)
+Write      | 44.12 MB&amp;#x2F;s   (11.0k) | 538.03 MB&amp;#x2F;s   (8.4k)
+Total      | 88.17 MB&amp;#x2F;s   (22.0k) | 1.07 GB&amp;#x2F;s    (16.7k)
+           |                      |                     
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 523.94 MB&amp;#x2F;s   (1.0k) | 520.26 MB&amp;#x2F;s    (508)
+Write      | 551.78 MB&amp;#x2F;s   (1.0k) | 554.91 MB&amp;#x2F;s    (541)
+Total      | 1.07 GB&amp;#x2F;s     (2.1k) | 1.07 GB&amp;#x2F;s     (1.0k)
+---------------------流媒体解锁--感谢sjlleo开源-------------------------
+以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用
+----------------Youtube----------------
+[IPv4]
+连接方式: Youtube Video Server
+视频缓存节点地域: NUQ(NUQ04S38)
+Youtube识别地域: 无信息(null)
+----------------Netflix----------------
+[IPv4]
+您的出口IP完整解锁Netflix，支持非自制剧的观看
+NF所识别的IP地域信息：美国
+[IPv6]
+您的网络可能没有正常配置IPv6，或者没有IPv6网络接入
+---------------DisneyPlus---------------
+[IPv4]
+当前IPv4出口解锁DisneyPlus
+区域：美国区
+解锁Youtube，Netflix，DisneyPlus上面和下面进行比较，不同之处自行判断
+----------------流媒体解锁--感谢RegionRestrictionCheck开源--------------
+ 以下为IPV4网络测试，若无IPV4网络则无输出
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;[ Multination ]&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+ Dazn:                                  Yes (Region: US)
+ HotStar:                               Yes (Region: US)
+ Disney+:                               Yes (Region: US)
+ Netflix:                               Yes (Region: US)
+ YouTube Premium:                       Yes
+ Amazon Prime Video:                    Yes (Region: US)
+ TVBAnywhere+:                          Yes
+ iQyi Oversea Region:                   US
+ Viu.com:                               No
+ YouTube CDN:                           Mountain View
+ Netflix Preferred CDN:                 San Jose, CA  
+ Spotify Registration:                  No
+ Steam Currency:                        USD
+ ChatGPT:                               Yes
+ Bing Region:                           US
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+ 以下为IPV6网络测试，若无IPV6网络则无输出
+---------------TikTok解锁--感谢lmc999的源脚本及fscarmen PR--------------
+ Tiktok Region:         【US】
+-------------------欺诈分数以及IP质量检测--本脚本原创-------------------
+数据仅作参考，不代表100%准确，如果和实际情况不一致请手动查询多个数据库比对
+以下为各数据库编号，输出结果后将自带数据库来源对应的编号
+ipinfo数据库 ①  | scamalytics数据库 ②  | virustotal数据库 ③  | abuseipdb数据库 ④  | ip2location数据库   ⑤
+ip-api数据库 ⑥  | ipwhois数据库     ⑦  | ipregistry数据库 ⑧  | ipdata数据库    ⑨  | ipgeolocation数据库 ⑩
+欺诈分数(越低越好): 0②
+abuse得分(越低越好): 0④
+IP类型: 
+  使用类型(usage_type):hosting①  Data Center&amp;#x2F;Web Hosting&amp;#x2F;Transit⑤  hosting⑧  business⑨  
+  公司类型(company_type):business①  isp⑧  
+  云服务提供商(cloud_provider):  Yes⑧ 
+  数据中心(datacenter):  No⑥ ⑨ 
+  移动网络(mobile):  No⑥ 
+  代理(proxy):  No① ② ⑥ ⑦ ⑧ ⑨ ⑩ 
+  VPN(vpn):  No① ② ⑦ ⑧ 
+  TOR(tor):  No① ② ⑦ ⑧ ⑨ 
+  TOR出口(tor_exit):  No⑧ 
+  搜索引擎机器人(search_engine_robot):② 
+  匿名代理(anonymous):  No⑦ ⑧ ⑨ 
+  攻击方(attacker):  No⑧ ⑨ 
+  滥用者(abuser):  No⑧ ⑨ 
+  威胁(threat):  No⑧ ⑨ 
+  iCloud中继(icloud_relay):  No① ⑧ ⑨ 
+  未分配IP(bogon):  No⑧ ⑨ 
+黑名单记录统计(有多少个黑名单网站有记录): 无害0 恶意0 可疑0 未检测89 ③
+Google搜索可行性：YES
+端口25检测:
+  本地: No
+  163邮箱：No
+----------------三网回程--感谢zhanghanyun&amp;#x2F;backtrace开源-----------------
+国家: US 城市: Mountain View 服务商: AS41378 Kirino LLC
+北京电信 219.141.136.12  联通4837[普通线路]           
+北京联通 202.106.50.1    联通4837[普通线路]           
+北京移动 221.179.155.161 联通4837[普通线路]           
+上海电信 202.96.209.133  联通4837[普通线路]           
+上海联通 210.22.97.1     联通4837[普通线路]           
+上海移动 211.136.112.200 联通4837[普通线路]           
+广州电信 58.60.188.222   联通4837[普通线路]           
+广州联通 210.21.196.6    联通4837[普通线路]           
+广州移动 120.196.165.24  联通4837[普通线路]           
+成都电信 61.139.2.69     联通4837[普通线路]           
+成都联通 119.6.6.6       联通4837[普通线路]           
+成都移动 211.137.96.205  联通4837[普通线路]           
+---------------------回程路由--感谢fscarmen开源及PR---------------------
+依次测试电信&amp;#x2F;联通&amp;#x2F;移动经过的地区及线路，核心程序来自ipip.net或nexttrace，请知悉!
+广州电信 58.60.188.222
+1.87 ms  AS41378  美国, 加利福尼亚州, 圣何塞, cogentco.com
+154.52 ms  AS4837  美国, 加利福尼亚州, 圣何塞, chinaunicom.com, 联通
+146.82 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+141.44 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+165.62 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通
+159.09 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信
+158.33 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信
+广州联通 210.21.196.6
+4.51 ms  AS41378  美国, 加利福尼亚州, 圣何塞, cogentco.com
+156.36 ms  AS4837  美国, 加利福尼亚州, 圣何塞, chinaunicom.com, 联通
+137.14 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+133.72 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+130.41 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+162.67 ms  AS17816  中国, 广东, 深圳, chinaunicom.com, 联通
+160.49 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通
+广州移动 120.196.165.24
+1.82 ms  AS41378  美国, 加利福尼亚州, 圣何塞, cogentco.com
+155.34 ms  AS4837  美国, 加利福尼亚州, 圣何塞, chinaunicom.com, 联通
+131.77 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+134.82 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+132.31 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+162.24 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通
+198.04 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动
+200.09 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动
+198.67 ms  AS56040  中国, 广东, 深圳, chinamobile.com, 移动
+--------------------自动更新测速节点列表--本脚本原创--------------------
+位置             上传速度        下载速度        延迟     丢包率
+Speedtest.net    3015.68 Mbps    2794.19 Mbps    1.29     0.0%
+洛杉矶           3025.06 Mbps    2220.77 Mbps    9.25     0.0%
+日本东京         407.19 Mbps     1410.07 Mbps    108.41   NULL
+联通上海5G       13.24 Mbps      13.30 Mbps      154.06   0.0%
+电信合肥5G       14.43 Mbps      540.62 Mbps     142.13   0.0%
+电信浙江         419.33 Mbps     10.32 Mbps      134.85   NULL
+移动Lanzhou      331.09 Mbps     1192.38 Mbps    197.52   NULL
+移动Chengdu      326.07 Mbps     768.70 Mbps     229.98   0.0%
+------------------------------------------------------------------------
+ 总共花费      : 6 分 21 秒
+ 时间          : Fri Jan 19 08:43:57 UTC 2024
+------------------------------------------------------------------------
+  短链:
+    https:&amp;#x2F;&amp;#x2F;paste.spiritlhl.net&amp;#x2F;u&amp;#x2F;uv0nL9.txt
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;cloudsilk&lt;br&gt;800G&lt;br&gt;135元&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;--------------------- A Bench Script By spiritlhl ----------------------
+                   测评频道: https:&amp;#x2F;&amp;#x2F;t.me&amp;#x2F;vps_reviews                    
+版本：2024.01.16
+更新日志：VPS融合怪测试(集百家之长)                       
+---------------------基础信息查询--感谢所有开源项目---------------------
+ CPU 型号          : Intel Core Processor (Broadwell, IBRS)
+ CPU 核心数        : 1
+ CPU 频率          : 2199.986 MHz
+ CPU 缓存          : L1: 64.00 KB &amp;#x2F; L2: 4.00 MB &amp;#x2F; L3: 16.00 MB
+ 硬盘空间          : 3.55 GiB &amp;#x2F; 9.34 GiB
+ 启动盘路径        : &amp;#x2F;dev&amp;#x2F;vda2
+ 内存              : 148.22 MiB &amp;#x2F; 473.12 MiB
+ Swap              : [ no swap partition or swap file detected ]
+ 系统在线时间      : 360 days, 0 hour 47 min
+ 负载              : 0.52, 0.14, 0.09
+ 系统              : Debian GNU&amp;#x2F;Linux 11 (bullseye) (x86_64)
+ AES-NI指令集      : ✔ Enabled
+ VM-x&amp;#x2F;AMD-V支持    : ❌ Disabled
+ 架构              : x86_64 (64 Bit)
+ 内核              : 5.10.0-9-amd64
+ TCP加速方式       : bbr
+ 虚拟化架构        : KVM
+ NAT类型           : 开放型
+ IPV4 ASN          : AS41378 Kirino LLC
+ IPV4 位置         : San Jose &amp;#x2F; California &amp;#x2F; US
+----------------------CPU测试--通过sysbench测试-------------------------
+ -&amp;gt; CPU 测试中 (Fast Mode, 1-Pass @ 5sec)
+ 1 线程测试(单核)得分:          750 Scores
+---------------------内存测试--感谢lemonbench开源-----------------------
+ -&amp;gt; 内存测试 Test (Fast Mode, 1-Pass @ 5sec)
+ 单线程读测试:          16127.25 MB&amp;#x2F;s
+ 单线程写测试:          10921.24 MB&amp;#x2F;s
+------------------磁盘dd读写测试--感谢lemonbench开源--------------------
+ -&amp;gt; 磁盘IO测试中 (4K Block&amp;#x2F;1M Block, Direct Mode)
+ 测试操作               写速度                                  读速度
+ 100MB-4K Block         47.1 MB&amp;#x2F;s (11.49 IOPS, 2.23s))          47.1 MB&amp;#x2F;s (11492 IOPS, 2.23s)
+ 1GB-1M Block           1.2 GB&amp;#x2F;s (1139 IOPS, 0.88s)             1.2 GB&amp;#x2F;s (1140 IOPS, 0.88s)
+---------------------磁盘fio读写测试--感谢yabs开源----------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 44.05 MB&amp;#x2F;s   (11.0k) | 536.73 MB&amp;#x2F;s   (8.3k)
+Write      | 44.12 MB&amp;#x2F;s   (11.0k) | 539.55 MB&amp;#x2F;s   (8.4k)
+Total      | 88.17 MB&amp;#x2F;s   (22.0k) | 1.07 GB&amp;#x2F;s    (16.8k)
+           |                      |                     
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ---- 
+Read       | 524.35 MB&amp;#x2F;s   (1.0k) | 520.13 MB&amp;#x2F;s    (507)
+Write      | 552.21 MB&amp;#x2F;s   (1.0k) | 554.77 MB&amp;#x2F;s    (541)
+Total      | 1.07 GB&amp;#x2F;s     (2.1k) | 1.07 GB&amp;#x2F;s     (1.0k)
+---------------------流媒体解锁--感谢sjlleo开源-------------------------
+以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用
+----------------Youtube----------------
+[IPv4]
+连接方式: Youtube Video Server
+视频缓存节点地域: 美国  旧金山(SFO03S20)
+Youtube识别地域: 无信息(null)
+----------------Netflix----------------
+[IPv4]
+您的出口IP可以使用Netflix，但仅可看Netflix自制剧
+NF所识别的IP地域信息：美国
+[IPv6]
+您的网络可能没有正常配置IPv6，或者没有IPv6网络接入
+---------------DisneyPlus---------------
+[IPv4]
+当前IPv4出口解锁DisneyPlus
+区域：美国区
+解锁Youtube，Netflix，DisneyPlus上面和下面进行比较，不同之处自行判断
+----------------流媒体解锁--感谢RegionRestrictionCheck开源--------------
+ 以下为IPV4网络测试，若无IPV4网络则无输出
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;[ Multination ]&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+ Dazn:                                  Yes (Region: US)
+ HotStar:                               Yes (Region: US)
+ Disney+:                               No
+ Netflix:                               Originals Only
+ YouTube Premium:                       Yes
+ Amazon Prime Video:                    Yes (Region: US)
+ TVBAnywhere+:                          Yes
+ iQyi Oversea Region:                   US
+ Viu.com:                               No
+ YouTube CDN:                           San Francisco, CA 
+ Netflix Preferred CDN:                 Associated with [] in [San Jose, CA ]
+ Spotify Registration:                  No
+ Steam Currency:                        USD
+ ChatGPT:                               Yes
+ Bing Region:                           US
+&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;
+ 以下为IPV6网络测试，若无IPV6网络则无输出
+---------------TikTok解锁--感谢lmc999的源脚本及fscarmen PR--------------
+ Tiktok Region:         【US】
+-------------------欺诈分数以及IP质量检测--本脚本原创-------------------
+数据仅作参考，不代表100%准确，如果和实际情况不一致请手动查询多个数据库比对
+以下为各数据库编号，输出结果后将自带数据库来源对应的编号
+ipinfo数据库 ①  | scamalytics数据库 ②  | virustotal数据库 ③  | abuseipdb数据库 ④  | ip2location数据库   ⑤
+ip-api数据库 ⑥  | ipwhois数据库     ⑦  | ipregistry数据库 ⑧  | ipdata数据库    ⑨  | ipgeolocation数据库 ⑩
+欺诈分数(越低越好): 0②
+IP类型: 
+  使用类型(usage_type):hosting①  hosting⑧  business⑨  
+  公司类型(company_type):hosting①  
+  云服务提供商(cloud_provider):  Yes⑧ 
+  数据中心(datacenter):  No⑨ 
+  代理(proxy):  No① ② ⑧ ⑨ ⑩ 
+  VPN(vpn):  No① ② ⑧ 
+  TOR(tor):  No① ② ⑧ ⑨ 
+  TOR出口(tor_exit):  No⑧ 
+  搜索引擎机器人(search_engine_robot):② 
+  匿名代理(anonymous):  No⑧ ⑨ 
+  攻击方(attacker):  No⑧ ⑨ 
+  滥用者(abuser):  No⑧ ⑨ 
+  威胁(threat):  No⑧ ⑨ 
+  iCloud中继(icloud_relay):  No① ⑧ ⑨ 
+  未分配IP(bogon):  No⑧ ⑨ 
+黑名单记录统计(有多少个黑名单网站有记录): 无害0 恶意0 可疑0 未检测89 ③
+Google搜索可行性：YES
+端口25检测:
+  本地: No
+  163邮箱：No
+----------------三网回程--感谢zhanghanyun&amp;#x2F;backtrace开源-----------------
+国家: US 城市: San Jose 服务商: AS41378 Kirino LLC
+北京电信 219.141.136.12  联通4837[普通线路]           
+北京联通 202.106.50.1    联通4837[普通线路]           
+北京移动 221.179.155.161 联通4837[普通线路]           
+上海电信 202.96.209.133  联通4837[普通线路]           
+上海联通 210.22.97.1     联通4837[普通线路]           
+上海移动 211.136.112.200 联通4837[普通线路]           
+广州电信 58.60.188.222   联通4837[普通线路]           
+广州联通 210.21.196.6    联通4837[普通线路]           
+广州移动 120.196.165.24  联通4837[普通线路]           
+成都电信 61.139.2.69     联通4837[普通线路]           
+成都联通 119.6.6.6       联通4837[普通线路]           
+成都移动 211.137.96.205  联通4837[普通线路]           
+---------------------回程路由--感谢fscarmen开源及PR---------------------
+依次测试电信&amp;#x2F;联通&amp;#x2F;移动经过的地区及线路，核心程序来自ipip.net或nexttrace，请知悉!
+广州电信 58.60.188.222
+2.54 ms  AS41378  美国, 加利福尼亚州, 圣何塞, cogentco.com
+131.58 ms  AS4837  美国, 加利福尼亚州, 圣何塞, chinaunicom.com, 联通
+151.23 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+155.30 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+147.66 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+178.61 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通
+185.01 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通
+170.48 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信
+167.47 ms  AS4134  中国, 广东, 深圳, chinatelecom.com.cn, 电信
+广州联通 210.21.196.6
+0.79 ms  AS41378  美国, 加利福尼亚州, 圣何塞, cogentco.com
+133.66 ms  AS4837  美国, 加利福尼亚州, 圣何塞, chinaunicom.com, 联通
+155.12 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+153.36 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+176.90 ms  AS17816  中国, 广东, 深圳, chinaunicom.com, 联通
+181.04 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通
+177.95 ms  AS17623  中国, 广东, 深圳, chinaunicom.com, 联通
+广州移动 120.196.165.24
+3.25 ms  AS41378  美国, 加利福尼亚州, 圣何塞, cogentco.com
+131.92 ms  AS4837  美国, 加利福尼亚州, 圣何塞, chinaunicom.com, 联通
+133.16 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+136.19 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+131.73 ms  AS4837  中国, 上海, chinaunicom.com, 联通
+161.02 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通
+165.64 ms  AS4837  中国, 广东, 广州, chinaunicom.com, 联通
+163.93 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动
+163.08 ms  AS9808  中国, 广东, 广州, chinamobile.com, 移动
+162.16 ms  AS56040  中国, 广东, 深圳, chinamobile.com, 移动
+--------------------自动更新测速节点列表--本脚本原创--------------------
+位置             上传速度        下载速度        延迟     丢包率
+Speedtest.net    6789.64 Mbps    4555.21 Mbps    1.24     0.0%
+洛杉矶           5986.25 Mbps    2825.06 Mbps    9.20     0.0%
+日本东京         357.18 Mbps     1097.06 Mbps    106.85   NULL
+联通上海5G       13.90 Mbps      829.40 Mbps     147.28   0.0%
+联通郑州5G       424.72 Mbps     582.49 Mbps     157.27   NULL
+电信合肥5G       87.00 Mbps      820.89 Mbps     148.19   0.0%
+电信Zhenjiang5G  326.45 Mbps     13.05 Mbps      154.76   NULL
+移动Chengdu      450.01 Mbps     344.98 Mbps     169.19   0.0%
+移动Lanzhou      352.65 Mbps     531.82 Mbps     174.00   NULL
+------------------------------------------------------------------------
+ 总共花费      : 8 分 3 秒
+ 时间          : Fri Jan 19 08:52:34 UTC 2024
+------------------------------------------------------------------------
+  短链:
+    https:&amp;#x2F;&amp;#x2F;paste.spiritlhl.net&amp;#x2F;u&amp;#x2F;ZiMMrt.txt&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <updated>2024-01-27T12:11:26.628Z</updated>
+    </entry>
+    <entry>
+        <id>http://www.seekvps.com/2024/01/26/%E5%A6%82%E4%BD%95%E5%9C%A8Ubuntu20.04%E6%90%AD%E5%BB%BA%E5%B9%BB%E5%85%BD%E5%B8%95%E9%B2%81%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+        <title>如何在Ubuntu20.04搭建幻兽帕鲁服务器</title>
+        <link rel="alternate" href="http://www.seekvps.com/2024/01/26/%E5%A6%82%E4%BD%95%E5%9C%A8Ubuntu20.04%E6%90%AD%E5%BB%BA%E5%B9%BB%E5%85%BD%E5%B8%95%E9%B2%81%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+        <content type="html">&lt;h1 id=&#34;购买服务器前需要了解的&#34;&gt;&lt;a href=&#34;#购买服务器前需要了解的&#34; class=&#34;headerlink&#34; title=&#34;购买服务器前需要了解的&#34;&gt;&lt;/a&gt;购买服务器前需要了解的&lt;/h1&gt;&lt;p&gt;幻兽帕鲁这个游戏极其不靠谱&lt;br&gt;虽然真的好玩，但是作为一款偏向联机的游戏太失败了&lt;br&gt;官方服务器崩溃、回档、甚至删档&lt;br&gt;自建服务器也同样会遇到这些情况&lt;br&gt;这都和游戏服务端的垃圾内存管理有关&lt;br&gt;它的内存会不断增加，不会清理，直到内存超过服务器最大限度&lt;br&gt;游戏崩溃！&lt;br&gt;无论是8g 16g 32g 就算你是128g的独立服务器&lt;br&gt;玩久了一样会把内存吃满满，然后服务端崩溃&lt;br&gt;在官方彻底修补解决前，我们是没有办法根治的&lt;br&gt;因此我们需要做好频繁崩溃的准备，也要做好崩溃前游戏丢包卡顿的准备&lt;br&gt;服务器配置8g起步，上不封顶&lt;/p&gt;
+&lt;p&gt;购买完服务器之后，将其重装成Ubuntu20.04系统（因为我是这个系统）&lt;br&gt;我们需要做到以下几点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;扩充swap，变相增加内存&lt;/li&gt;
+&lt;li&gt;安装服务端（Steamcmd和Palserver）&lt;/li&gt;
+&lt;li&gt;配置Systemd&lt;/li&gt;
+&lt;li&gt;修改PalWorldSettings.ini文件&lt;/li&gt;
+&lt;li&gt;熟悉管理员命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;创建swap&#34;&gt;&lt;a href=&#34;#创建swap&#34; class=&#34;headerlink&#34; title=&#34;创建swap&#34;&gt;&lt;/a&gt;创建swap&lt;/h1&gt;&lt;p&gt;创建一个新的 swap 文件（如果需要）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo fallocate -l 20G /swapfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这会在根目录下创建一个名为 swapfile 的 20GB 大小的 swap 文件。&lt;br&gt;设置新 swap 文件的权限：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo chmod 600 /swapfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将文件转换为 swap 文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo mkswap /swapfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启用新的 swap 文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo swapon /swapfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看是否成功启用了新的 swap 文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo swapon --show
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;永久性配置，以便在系统重新启动时自动加载新的 swap 文件：&lt;br&gt;打开 &amp;#x2F;etc&amp;#x2F;fstab文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vim /etc/fstab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在文件末尾添加以下行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/swapfile none swap sw 0 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最后，刷新文件系统表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo swapon --all --verbose
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;服务端搭建&#34;&gt;&lt;a href=&#34;#服务端搭建&#34; class=&#34;headerlink&#34; title=&#34;服务端搭建&#34;&gt;&lt;/a&gt;服务端搭建&lt;/h1&gt;&lt;p&gt;按顺序输入代码&lt;/p&gt;
+&lt;h1 id=&#34;添加-32-位架构支持和安装相关库&#34;&gt;&lt;a href=&#34;#添加-32-位架构支持和安装相关库&#34; class=&#34;headerlink&#34; title=&#34;添加 32 位架构支持和安装相关库&#34;&gt;&lt;/a&gt;添加 32 位架构支持和安装相关库&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install lib32gcc1 lib32stdc++6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;创建一个新用户并安装-screen-工具，这里会要求创建steam用户的密码&#34;&gt;&lt;a href=&#34;#创建一个新用户并安装-screen-工具，这里会要求创建steam用户的密码&#34; class=&#34;headerlink&#34; title=&#34;创建一个新用户并安装 screen 工具，这里会要求创建steam用户的密码&#34;&gt;&lt;/a&gt;创建一个新用户并安装 screen 工具，这里会要求创建steam用户的密码&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;adduser steam
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;切换到新用户&#34;&gt;&lt;a href=&#34;#切换到新用户&#34; class=&#34;headerlink&#34; title=&#34;切换到新用户&#34;&gt;&lt;/a&gt;切换到新用户&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;su -ls /bin/bash steam
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;下载并安装-SteamCMD&#34;&gt;&lt;a href=&#34;#下载并安装-SteamCMD&#34; class=&#34;headerlink&#34; title=&#34;下载并安装 SteamCMD&#34;&gt;&lt;/a&gt;下载并安装 SteamCMD&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+tar -xvzf steamcmd_linux.tar.gz
+./steamcmd.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;设置-PalServer-安装目录并使用-SteamCMD-登录并更新-PalServer&#34;&gt;&lt;a href=&#34;#设置-PalServer-安装目录并使用-SteamCMD-登录并更新-PalServer&#34; class=&#34;headerlink&#34; title=&#34;设置 PalServer 安装目录并使用 SteamCMD 登录并更新 PalServer&#34;&gt;&lt;/a&gt;设置 PalServer 安装目录并使用 SteamCMD 登录并更新 PalServer&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;force_install_dir /home/steam/PalServer
+login anonymous
+app_update 2394010 validate
+quit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;进入-PalServer-目录&#34;&gt;&lt;a href=&#34;#进入-PalServer-目录&#34; class=&#34;headerlink&#34; title=&#34;进入 PalServer 目录&#34;&gt;&lt;/a&gt;进入 PalServer 目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;cd PalServer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;创建-Steam-SDK-目录并复制-steamclient-so-文件&#34;&gt;&lt;a href=&#34;#创建-Steam-SDK-目录并复制-steamclient-so-文件&#34; class=&#34;headerlink&#34; title=&#34;创建 Steam SDK 目录并复制 steamclient.so 文件&#34;&gt;&lt;/a&gt;创建 Steam SDK 目录并复制 steamclient.so 文件&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;mkdir -p ~/.steam/sdk64/
+cp linux64/steamclient.so ~/.steam/sdk64/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;运行-PalServer-脚本，出现AppID服务器即运行成功&#34;&gt;&lt;a href=&#34;#运行-PalServer-脚本，出现AppID服务器即运行成功&#34; class=&#34;headerlink&#34; title=&#34;运行 PalServer 脚本，出现AppID服务器即运行成功&#34;&gt;&lt;/a&gt;运行 PalServer 脚本，出现AppID服务器即运行成功&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;./PalServer.sh port=8211
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;Systemd配置&#34;&gt;&lt;a href=&#34;#Systemd配置&#34; class=&#34;headerlink&#34; title=&#34;Systemd配置&#34;&gt;&lt;/a&gt;Systemd配置&lt;/h1&gt;&lt;p&gt;需要执行以下步骤：&lt;br&gt;打开 systemd 服务单元文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/systemd/system/palserver.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 Vim 中，按 i 进入插入模式，然后添加或修改文件内容。以下是一个示例 PalServer systemd 服务单元文件的内容，包含了添加 Vim 的配置：&lt;br&gt;    [Unit]&lt;br&gt;    Description&amp;#x3D;Palworld Server&lt;br&gt;    Wants&amp;#x3D;network-online.target&lt;br&gt;    After&amp;#x3D;syslog.target network.target nss-lookup.target network-online.target&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Service]
+WorkingDirectory=/home/steam/PalServer
+
+ExecStart=/bin/bash -c &amp;quot;/home/steam/PalServer/PalServer.sh -port=8211 -players=16 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS&amp;quot;
+
+LimitNOFILE=100000
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s INT $MAINPID
+
+Restart=always
+RestartSec=10
+
+User=steam
+Group=steam
+
+[Install]
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中，服务器人数上限和服务器停止后等待重启秒数都可以自由设置&lt;br&gt;在编辑完成后，按 Esc 键退出插入模式&lt;br&gt;输入 :wq 并按 Enter 保存并退出 Vim&lt;br&gt;systemd 提供了更强大的服务管理功能，包括启动、停止、重启、状态监控等，而无需依赖终端窗口&lt;br&gt;通过 systemd，你可以使用以下命令来管理 PalServer 服务：&lt;br&gt;启动服务：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl start palserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;停止服务：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl stop palserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启服务：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl restart palserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看服务状态：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl status palserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置服务开机自启动 ：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl enable palserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;禁用服务开机自启动：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl disable palserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重新加载 systemd 以使更改生效（vim修改后报错时）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl daemon-reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;修改配置文件&#34;&gt;&lt;a href=&#34;#修改配置文件&#34; class=&#34;headerlink&#34; title=&#34;修改配置文件&#34;&gt;&lt;/a&gt;修改配置文件&lt;/h1&gt;&lt;p&gt;本来是很麻烦的事情&lt;br&gt;但是有台湾友人倾情写了个网站方便大众&lt;br&gt;PalWorld Settings Generator v0.11 (dysoncheng.github.io)&lt;br&gt;&lt;a href=&#34;https://dysoncheng.github.io/PalWorldSettingGenerator/setting.html&#34;&gt;https://dysoncheng.github.io/PalWorldSettingGenerator/setting.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个网站可以直接输入你想要的设定然后输出PalWorldSettings.ini文件&lt;br&gt;把目录&amp;#x2F;home&amp;#x2F;steam&amp;#x2F;PalServer&amp;#x2F;Pal&amp;#x2F;Saved&amp;#x2F;Config&amp;#x2F;LinuxServer&amp;#x2F;文件夹中的文件替换掉即可&lt;br&gt;熟悉管理员命令&lt;br&gt;最后的最后，成为腐竹当然要能掌控全局！&lt;br&gt;虽然管理员命令不是很多，但有些还是很重要的&lt;br&gt;在游戏内对话框（按回车打开对话框）中输入&amp;#x2F;AdminPassword 管理员密码&lt;br&gt;即可成为管理员&lt;br&gt;之后在对话框可以输入的命令有：&lt;br&gt;&amp;#x2F;Shutdown {Seconds} {MessageText} 服务器关闭数秒后将收到您的 MessageText 通知&lt;br&gt;&amp;#x2F;DoExit 强制停止服务器&lt;br&gt;&amp;#x2F;Broadcast {MessageText} 向服务器中的所有玩家发送消息&lt;br&gt;&amp;#x2F;KickPlayer {SteamID} 将玩家从服务器中踢出&lt;br&gt;&amp;#x2F;BanPlayer {SteamID} 从服务器禁止玩家&lt;br&gt;&amp;#x2F;TeleportToPlayer {SteamID} 传送到目标玩家的当前位置&lt;br&gt;&amp;#x2F;TeleportToMe {SteamID} 目标玩家传送到您当前的位置&lt;br&gt;&amp;#x2F;ShowPlayers 显示所有已连接玩家的信息&lt;br&gt;&amp;#x2F;Info 显示服务器信息&lt;br&gt;&amp;#x2F;Save 保存世界数据&lt;br&gt;&amp;#x2F;Save可以在停服前手动保存存档，减少坏档的机率，&amp;#x2F;Shutdown 60 可以在服务器卡顿时，无须操作终端软件，在服务器内关闭游戏端，并且通过配合systemd实现自动重启游戏端&lt;br&gt;2.开开心心的玩吧！&lt;br&gt;服务器准备到这种程度，后续发生的一切都随缘啦&lt;br&gt;该坏还是坏，该崩还是崩&lt;br&gt;只能期待自己运气好点，官方早点更新！&lt;/p&gt;
+</content>
+        <category term="幻兽帕鲁" />
+        <updated>2024-01-26T01:07:14.000Z</updated>
+    </entry>
     <entry>
         <id>http://www.seekvps.com/2024/01/16/MySQL%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96ORDER%20BY%E6%8E%92%E5%BA%8F%E8%AF%AD/</id>
         <title>MySQL如何利用索引优化ORDER BY排序语</title>
@@ -2206,7 +2683,7 @@ iperf3 &lt;span class=&#34;token class-name&#34;&gt;Network&lt;/span&gt; &lt;spa
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;重启MarkdownPad 2&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;喜闻乐见&#34;&gt;&lt;a href=&#34;#喜闻乐见&#34; class=&#34;headerlink&#34; title=&#34;喜闻乐见&#34;&gt;&lt;/a&gt;喜闻乐见&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;mailto:&amp;#x53;&amp;#111;&amp;#97;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#64;&amp;#x6c;&amp;#105;&amp;#118;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&#34;&gt;&amp;#x53;&amp;#111;&amp;#97;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#64;&amp;#x6c;&amp;#105;&amp;#118;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;喜闻乐见&#34;&gt;&lt;a href=&#34;#喜闻乐见&#34; class=&#34;headerlink&#34; title=&#34;喜闻乐见&#34;&gt;&lt;/a&gt;喜闻乐见&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;mailto:&amp;#83;&amp;#x6f;&amp;#x61;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#x40;&amp;#108;&amp;#x69;&amp;#x76;&amp;#101;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#83;&amp;#x6f;&amp;#x61;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#x40;&amp;#108;&amp;#x69;&amp;#x76;&amp;#101;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&amp;#x2F;sQytXJUQl&amp;#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&amp;#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&amp;#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&amp;#x3D;&amp;#x3D;&lt;/p&gt;
 </content>
         <category term="MarkDownPad2" />
