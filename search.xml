@@ -390,7 +390,7 @@ net<span class="token punctuation">.</span>ipv6<span class="token punctuation">.
 <ol start="3">
 <li>重启MarkdownPad 2</li>
 </ol>
-<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#83;&#x6f;&#x61;&#114;&#51;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#111;&#x6d;">&#83;&#x6f;&#x61;&#114;&#51;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
+<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#x53;&#x6f;&#97;&#x72;&#x33;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#101;&#46;&#x63;&#x6f;&#109;">&#x53;&#x6f;&#97;&#x72;&#x33;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#101;&#46;&#x63;&#x6f;&#109;</a></p>
 <p>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&#x2F;sQytXJUQl&#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&#x3D;&#x3D;</p>
 ]]></content>
       <categories>
@@ -1977,7 +1977,10 @@ iptables <span class="token operator">-</span><span class="token constant">I</sp
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token constant">RETURN</span>     all  <span class="token operator">--</span>  <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span><span class="token operator">/</span><span class="token number">0</span>            <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span><span class="token operator">/</span><span class="token number">0</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>删除这个规则，并添加规则</p>
-]]></content>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">iptables <span class="token operator">-</span><span class="token constant">I</span> <span class="token constant">DOCKER</span><span class="token operator">-</span><span class="token constant">USER</span> <span class="token operator">-</span>p tcp <span class="token operator">--</span>dport <span class="token number">80</span> <span class="token operator">-</span>j <span class="token constant">DROP</span>
+iptables <span class="token operator">-</span><span class="token constant">I</span> <span class="token constant">DOCKER</span><span class="token operator">-</span><span class="token constant">USER</span> <span class="token operator">-</span>p tcp <span class="token operator">-</span>s <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span> <span class="token operator">--</span>dport <span class="token number">80</span> <span class="token operator">-</span>j <span class="token constant">ACCEPT</span>
+iptables <span class="token operator">-</span><span class="token constant">I</span> <span class="token constant">DOCKER</span><span class="token operator">-</span><span class="token constant">USER</span> <span class="token operator">-</span>p tcp <span class="token operator">-</span>s <span class="token number">172.172</span><span class="token number">.172</span><span class="token number">.172</span> <span class="token operator">--</span>dport <span class="token number">80</span> <span class="token operator">-</span>j <span class="token constant">ACCEPT</span>
+iptables <span class="token operator">-</span><span class="token constant">I</span> <span class="token constant">DOCKER</span><span class="token operator">-</span><span class="token constant">USER</span> <span class="token operator">-</span>j <span class="token constant">RETURN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>iptables</category>
       </categories>
