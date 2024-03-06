@@ -3,7 +3,7 @@
     <id>http://www.seekvps.com</id>
     <title>VPS探索者</title>
     <link href="http://www.seekvps.com" />
-    <updated>2024-01-27T12:11:26.628Z</updated>
+    <updated>2024-03-06T02:10:25.504Z</updated>
     <category term="akile.io" />
     <category term="Debian" />
     <category term="MarkDownPad2" />
@@ -22,6 +22,52 @@
     <category term="dogyun" />
     <category term="测评" />
     <category term="软考" />
+    <entry>
+        <id>http://www.seekvps.com/2024/03/06/%E4%BB%A3%E7%A0%81%E6%94%BE%E5%9C%A8Docker%E9%87%8C%E9%9D%A2%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2/</id>
+        <title></title>
+        <link rel="alternate" href="http://www.seekvps.com/2024/03/06/%E4%BB%A3%E7%A0%81%E6%94%BE%E5%9C%A8Docker%E9%87%8C%E9%9D%A2%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2/"/>
+        <content type="html">&lt;p&gt;代码放在Docker里面还是外面&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.9ong.com/012020/%E4%BB%A3%E7%A0%81%E6%94%BE%E5%9C%A8docker%E9%87%8C%E9%9D%A2%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2.html&#34;&gt;http://www.9ong.com/012020/%E4%BB%A3%E7%A0%81%E6%94%BE%E5%9C%A8docker%E9%87%8C%E9%9D%A2%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目录&lt;br&gt;问题&lt;br&gt;docker的好处&lt;br&gt;其他建议&lt;br&gt;问题&lt;br&gt;通俗的问题：代码放在Docker里面还是外面呢？&lt;/p&gt;
+&lt;p&gt;可能是一个新手，刚接触docker ，看了好多docker方面的文档。目前已经学了一些很基础的东西。但是还有一些疑问。&lt;/p&gt;
+&lt;p&gt;首先项目是公司内部使用，所以并发不大，项目也不多，接触docker后，在想，项目代码是放在docker里面，还是外面呢？？放在外面和里面分别有什么好处吗？&lt;/p&gt;
+&lt;p&gt;docker的外部，可以认为是和Docker没有任何关系。而Docker的内部，可以认为有两个维度，第一，Docker容器内部，第二，Docker的镜像image内部。&lt;/p&gt;
+&lt;p&gt;docker的好处&lt;br&gt;首先需要知道的是：Docker到底能够给我们项目带来哪些好处，带来轻量级虚拟化容器方面的优势（资源利用率高，创建快捷，环境纯净简洁）？还是镜像带来的优势（便于部署，记录容器状态，持续集成等）？确定了使用的场景，才好说明代码到底放到什么地方更合适。&lt;/p&gt;
+&lt;p&gt;场景一：服务分发&lt;/p&gt;
+&lt;p&gt;如果做好了所有代码，想分发给其他使用者，这种无疑代码放到image是最佳的，包括数据库初始化脚本等。让用户可以一键安装使用，无需关心环境配置等&lt;/p&gt;
+&lt;p&gt;场景二：内部开发环境&lt;/p&gt;
+&lt;p&gt;如果是开发环境，代码是用于调试，代码不应该在image里面，代码最好是在主机上，如MacOS，Windows，Linux的个人PC上，通过volume方式进行挂载是最方便的，修改代码直接就可以进行调试。&lt;/p&gt;
+&lt;p&gt;场景三：线上测试环境&lt;/p&gt;
+&lt;p&gt;如果是测试环境，建议使用git方式管理代码，代码不直接放在image中，一种是通过docker exec到容器内git pull对应的代码，另一种是主机上git pull代码，然后通过web服务比如nginx等通过volumes挂载的方式映射到容器中。&lt;/p&gt;
+&lt;p&gt;如果是软件产品售卖，且非saas模式的话，建议直接做为image镜像分发；其他如果是公司或团队自己运营产品项目，且频繁代码修改版本上线的话，建议docker只负责服务环境处理，代码仍然交给主机，由git去维护&lt;/p&gt;
+&lt;p&gt;没有哪种最优，只有最适合的。&lt;/p&gt;
+&lt;p&gt;其他建议&lt;br&gt;建议1：代码不放入镜像，使用volume挂载放入容器。这样我的镜像只需要维护程序运行的环境，不同的项目运行不同的容器挂载不同的代码。我认为这种粒度比较合适。代码版本控制还可以继续使用git&amp;#x2F;svn来管理。&lt;/p&gt;
+&lt;p&gt;建议2：有一种是例外的，那就是你使用开发的代码来直接搭建一个完整的服务，不想要对代码再继续修改。那这时候集成到镜像内是合适的。&lt;/p&gt;
+&lt;p&gt;更多建议： &lt;a href=&#34;http://dockone.io/question/24&#34;&gt;http://dockone.io/question/24&lt;/a&gt;&lt;/p&gt;
+</content>
+        <updated>2024-03-06T02:10:25.504Z</updated>
+    </entry>
+    <entry>
+        <id>http://www.seekvps.com/2024/03/06/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AF%B9docker%E7%AB%AF%E5%8F%A3%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/</id>
+        <title>iptables防火墙对docker端口不起作用</title>
+        <link rel="alternate" href="http://www.seekvps.com/2024/03/06/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AF%B9docker%E7%AB%AF%E5%8F%A3%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/"/>
+        <content type="html">&lt;p&gt;一般情况下宿主机如果想要指定某个IP某个端口可以用iptables进行操作&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-jsx&#34; data-language=&#34;jsx&#34;&gt;&lt;code class=&#34;language-jsx&#34;&gt;iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;p tcp &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;dport &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;j &lt;span class=&#34;token constant&#34;&gt;DROP&lt;/span&gt;
+iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;p tcp &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;s &lt;span class=&#34;token number&#34;&gt;127.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;dport &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;j &lt;span class=&#34;token constant&#34;&gt;ACCEPT&lt;/span&gt;
+iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;p tcp &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;s &lt;span class=&#34;token number&#34;&gt;172.172&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.172&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.172&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;dport &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;j &lt;span class=&#34;token constant&#34;&gt;ACCEPT&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是对于对外暴漏出的docker的80端口并不会生效，这样我们排查一下&lt;/p&gt;
+&lt;p&gt;查看iptables列表&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-jsx&#34; data-language=&#34;jsx&#34;&gt;&lt;code class=&#34;language-jsx&#34;&gt;iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;nL&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;有个DOCKER-USER链路，这个是官方建议操作的链路。其中链路中有一条规则&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-jsx&#34; data-language=&#34;jsx&#34;&gt;&lt;code class=&#34;language-jsx&#34;&gt;&lt;span class=&#34;token constant&#34;&gt;RETURN&lt;/span&gt;     all  &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;  &lt;span class=&#34;token number&#34;&gt;0.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;            &lt;span class=&#34;token number&#34;&gt;0.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;删除这个规则，并添加规则&lt;/p&gt;
+</content>
+        <category term="iptables" />
+        <updated>2024-03-06T01:07:14.000Z</updated>
+    </entry>
     <entry>
         <id>http://www.seekvps.com/2024/01/27/%E5%92%B8%E9%B1%BC%E4%BA%91%E4%B8%8E%E7%99%BD%E4%B8%9D%E4%BA%91%E6%B5%8B%E8%AF%95/</id>
         <title></title>
@@ -2683,7 +2729,7 @@ iperf3 &lt;span class=&#34;token class-name&#34;&gt;Network&lt;/span&gt; &lt;spa
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;重启MarkdownPad 2&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;喜闻乐见&#34;&gt;&lt;a href=&#34;#喜闻乐见&#34; class=&#34;headerlink&#34; title=&#34;喜闻乐见&#34;&gt;&lt;/a&gt;喜闻乐见&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;mailto:&amp;#83;&amp;#x6f;&amp;#x61;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#x40;&amp;#108;&amp;#x69;&amp;#x76;&amp;#101;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#83;&amp;#x6f;&amp;#x61;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#x40;&amp;#108;&amp;#x69;&amp;#x76;&amp;#101;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;喜闻乐见&#34;&gt;&lt;a href=&#34;#喜闻乐见&#34; class=&#34;headerlink&#34; title=&#34;喜闻乐见&#34;&gt;&lt;/a&gt;喜闻乐见&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;mailto:&amp;#83;&amp;#x6f;&amp;#x61;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#x40;&amp;#x6c;&amp;#105;&amp;#118;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#83;&amp;#x6f;&amp;#x61;&amp;#114;&amp;#51;&amp;#54;&amp;#x30;&amp;#x40;&amp;#x6c;&amp;#105;&amp;#118;&amp;#x65;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&amp;#x2F;sQytXJUQl&amp;#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&amp;#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&amp;#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&amp;#x3D;&amp;#x3D;&lt;/p&gt;
 </content>
         <category term="MarkDownPad2" />

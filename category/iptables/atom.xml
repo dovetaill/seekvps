@@ -3,7 +3,7 @@
     <id>http://www.seekvps.com</id>
     <title>VPS探索者 • Posts by &#34;iptables&#34; category</title>
     <link href="http://www.seekvps.com" />
-    <updated>2023-10-12T02:30:44.000Z</updated>
+    <updated>2024-03-06T01:07:14.000Z</updated>
     <category term="akile.io" />
     <category term="Debian" />
     <category term="MarkDownPad2" />
@@ -22,6 +22,27 @@
     <category term="dogyun" />
     <category term="测评" />
     <category term="软考" />
+    <entry>
+        <id>http://www.seekvps.com/2024/03/06/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AF%B9docker%E7%AB%AF%E5%8F%A3%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/</id>
+        <title>iptables防火墙对docker端口不起作用</title>
+        <link rel="alternate" href="http://www.seekvps.com/2024/03/06/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AF%B9docker%E7%AB%AF%E5%8F%A3%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/"/>
+        <content type="html">&lt;p&gt;一般情况下宿主机如果想要指定某个IP某个端口可以用iptables进行操作&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-jsx&#34; data-language=&#34;jsx&#34;&gt;&lt;code class=&#34;language-jsx&#34;&gt;iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;p tcp &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;dport &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;j &lt;span class=&#34;token constant&#34;&gt;DROP&lt;/span&gt;
+iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;p tcp &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;s &lt;span class=&#34;token number&#34;&gt;127.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;dport &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;j &lt;span class=&#34;token constant&#34;&gt;ACCEPT&lt;/span&gt;
+iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;I&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;p tcp &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;s &lt;span class=&#34;token number&#34;&gt;172.172&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.172&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.172&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;dport &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;j &lt;span class=&#34;token constant&#34;&gt;ACCEPT&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是对于对外暴漏出的docker的80端口并不会生效，这样我们排查一下&lt;/p&gt;
+&lt;p&gt;查看iptables列表&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-jsx&#34; data-language=&#34;jsx&#34;&gt;&lt;code class=&#34;language-jsx&#34;&gt;iptables &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;nL&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;有个DOCKER-USER链路，这个是官方建议操作的链路。其中链路中有一条规则&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-jsx&#34; data-language=&#34;jsx&#34;&gt;&lt;code class=&#34;language-jsx&#34;&gt;&lt;span class=&#34;token constant&#34;&gt;RETURN&lt;/span&gt;     all  &lt;span class=&#34;token operator&#34;&gt;--&lt;/span&gt;  &lt;span class=&#34;token number&#34;&gt;0.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;            &lt;span class=&#34;token number&#34;&gt;0.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;.0&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;删除这个规则，并添加规则&lt;/p&gt;
+</content>
+        <category term="iptables" />
+        <updated>2024-03-06T01:07:14.000Z</updated>
+    </entry>
     <entry>
         <id>http://www.seekvps.com/2023/10/12/iptables%E8%87%AA%E5%8A%A8%E5%B1%8F%E8%94%BD%E8%AE%BF%E9%97%AE%E7%BD%91%E7%AB%99%E9%A2%91%E7%B9%81%E7%9A%84IP/</id>
         <title>iptables自动屏蔽访问网站频繁的IP</title>

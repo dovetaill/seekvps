@@ -390,7 +390,7 @@ net<span class="token punctuation">.</span>ipv6<span class="token punctuation">.
 <ol start="3">
 <li>重启MarkdownPad 2</li>
 </ol>
-<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#83;&#x6f;&#x61;&#114;&#51;&#54;&#x30;&#x40;&#108;&#x69;&#x76;&#101;&#46;&#x63;&#x6f;&#109;">&#83;&#x6f;&#x61;&#114;&#51;&#54;&#x30;&#x40;&#108;&#x69;&#x76;&#101;&#46;&#x63;&#x6f;&#109;</a></p>
+<h2 id="喜闻乐见"><a href="#喜闻乐见" class="headerlink" title="喜闻乐见"></a>喜闻乐见</h2><p><a href="mailto:&#83;&#x6f;&#x61;&#114;&#51;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#111;&#x6d;">&#83;&#x6f;&#x61;&#114;&#51;&#54;&#x30;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
 <p>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5&#x2F;sQytXJUQl&#x2F;QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb&#x2F;ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8&#x2F;eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ&#x3D;&#x3D;</p>
 ]]></content>
       <categories>
@@ -1954,6 +1954,30 @@ done
         echo <span class="token string">"$(date +"</span><span class="token operator">%</span><span class="token class-name">F</span> <span class="token operator">%</span><span class="token class-name">T</span><span class="token string">") - iptables -A INPUT -s $IP -j DROP"</span> <span class="token operator">>></span><span class="token operator">~</span><span class="token operator">/</span>ssh<span class="token operator">-</span>login<span class="token operator">-</span>limit<span class="token punctuation">.</span>log
     fi
 done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>iptables</category>
+      </categories>
+      <tags>
+        <tag>iptables</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iptables防火墙对docker端口不起作用</title>
+    <url>/2024/03/06/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E5%AF%B9docker%E7%AB%AF%E5%8F%A3%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/</url>
+    <content><![CDATA[<p>一般情况下宿主机如果想要指定某个IP某个端口可以用iptables进行操作</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">iptables <span class="token operator">-</span><span class="token constant">I</span> <span class="token constant">INPUT</span> <span class="token operator">-</span>p tcp <span class="token operator">--</span>dport <span class="token number">80</span> <span class="token operator">-</span>j <span class="token constant">DROP</span>
+iptables <span class="token operator">-</span><span class="token constant">I</span> <span class="token constant">INPUT</span> <span class="token operator">-</span>p tcp <span class="token operator">-</span>s <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span> <span class="token operator">--</span>dport <span class="token number">80</span> <span class="token operator">-</span>j <span class="token constant">ACCEPT</span>
+iptables <span class="token operator">-</span><span class="token constant">I</span> <span class="token constant">INPUT</span> <span class="token operator">-</span>p tcp <span class="token operator">-</span>s <span class="token number">172.172</span><span class="token number">.172</span><span class="token number">.172</span> <span class="token operator">--</span>dport <span class="token number">80</span> <span class="token operator">-</span>j <span class="token constant">ACCEPT</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>但是对于对外暴漏出的docker的80端口并不会生效，这样我们排查一下</p>
+<p>查看iptables列表</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">iptables <span class="token operator">-</span>nL<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>有个DOCKER-USER链路，这个是官方建议操作的链路。其中链路中有一条规则</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token constant">RETURN</span>     all  <span class="token operator">--</span>  <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span><span class="token operator">/</span><span class="token number">0</span>            <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span><span class="token operator">/</span><span class="token number">0</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>删除这个规则，并添加规则</p>
+]]></content>
       <categories>
         <category>iptables</category>
       </categories>
@@ -3715,6 +3739,29 @@ Speedtest.net    891.52 Mbps     744.87 Mbps     0.93     0.0%
       <tags>
         <tag>suble.io</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/03/06/%E4%BB%A3%E7%A0%81%E6%94%BE%E5%9C%A8Docker%E9%87%8C%E9%9D%A2%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2/</url>
+    <content><![CDATA[<p>代码放在Docker里面还是外面</p>
+<p><a href="http://www.9ong.com/012020/%E4%BB%A3%E7%A0%81%E6%94%BE%E5%9C%A8docker%E9%87%8C%E9%9D%A2%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2.html">http://www.9ong.com/012020/%E4%BB%A3%E7%A0%81%E6%94%BE%E5%9C%A8docker%E9%87%8C%E9%9D%A2%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2.html</a></p>
+<p>目录<br>问题<br>docker的好处<br>其他建议<br>问题<br>通俗的问题：代码放在Docker里面还是外面呢？</p>
+<p>可能是一个新手，刚接触docker ，看了好多docker方面的文档。目前已经学了一些很基础的东西。但是还有一些疑问。</p>
+<p>首先项目是公司内部使用，所以并发不大，项目也不多，接触docker后，在想，项目代码是放在docker里面，还是外面呢？？放在外面和里面分别有什么好处吗？</p>
+<p>docker的外部，可以认为是和Docker没有任何关系。而Docker的内部，可以认为有两个维度，第一，Docker容器内部，第二，Docker的镜像image内部。</p>
+<p>docker的好处<br>首先需要知道的是：Docker到底能够给我们项目带来哪些好处，带来轻量级虚拟化容器方面的优势（资源利用率高，创建快捷，环境纯净简洁）？还是镜像带来的优势（便于部署，记录容器状态，持续集成等）？确定了使用的场景，才好说明代码到底放到什么地方更合适。</p>
+<p>场景一：服务分发</p>
+<p>如果做好了所有代码，想分发给其他使用者，这种无疑代码放到image是最佳的，包括数据库初始化脚本等。让用户可以一键安装使用，无需关心环境配置等</p>
+<p>场景二：内部开发环境</p>
+<p>如果是开发环境，代码是用于调试，代码不应该在image里面，代码最好是在主机上，如MacOS，Windows，Linux的个人PC上，通过volume方式进行挂载是最方便的，修改代码直接就可以进行调试。</p>
+<p>场景三：线上测试环境</p>
+<p>如果是测试环境，建议使用git方式管理代码，代码不直接放在image中，一种是通过docker exec到容器内git pull对应的代码，另一种是主机上git pull代码，然后通过web服务比如nginx等通过volumes挂载的方式映射到容器中。</p>
+<p>如果是软件产品售卖，且非saas模式的话，建议直接做为image镜像分发；其他如果是公司或团队自己运营产品项目，且频繁代码修改版本上线的话，建议docker只负责服务环境处理，代码仍然交给主机，由git去维护</p>
+<p>没有哪种最优，只有最适合的。</p>
+<p>其他建议<br>建议1：代码不放入镜像，使用volume挂载放入容器。这样我的镜像只需要维护程序运行的环境，不同的项目运行不同的容器挂载不同的代码。我认为这种粒度比较合适。代码版本控制还可以继续使用git&#x2F;svn来管理。</p>
+<p>建议2：有一种是例外的，那就是你使用开发的代码来直接搭建一个完整的服务，不想要对代码再继续修改。那这时候集成到镜像内是合适的。</p>
+<p>更多建议： <a href="http://dockone.io/question/24">http://dockone.io/question/24</a></p>
+]]></content>
   </entry>
   <entry>
     <title></title>
